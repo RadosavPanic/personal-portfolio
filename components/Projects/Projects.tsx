@@ -14,22 +14,25 @@ const Projects = () => {
         <ProjectCard
           src="/Promptopia.png"
           title="AI Prompting Website"
-          description="Open-source AI prompting tool for the modern world, empowering users to discover, create, and share imaginative prompts that inspire AI-driven content. Ideal for brainstorming, enhancing projects, or having fun with AI potential."
-          demo="https://promptopia-nine-lilac.vercel.app/"
+          description="Open-source AI prompting tool for the modern world, empowering users to discover, create, and share imaginative prompts that inspire AI-driven content. Ideal for brainstorming ideas, enhancing projects, or having fun with exploring AI potential."
+          demo_link="https://promptopia-nine-lilac.vercel.app/"
+          github_link="https://github.com/RadosavPanic/promptopia"
         />
 
         <ProjectCard
           src="/CrownClothing.png"
           title="E-Commerce Website"
-          description="A sleek online store featuring a curated range of clothing. Users can browse selections, add items to their cart, and proceed to secure payment with ease. Perfect for fashion enthusiasts looking for variety and convenience in one place."
-          demo="https://crownclothing-onsite.netlify.app/"
+          description="A sleek online store featuring a curated range of mens and womens clothing. Users can browse selections, add items to their cart, and proceed to secure payment with ease. Perfect for fashion enthusiasts looking for variety and convenience in one place."
+          demo_link="https://crownclothing-onsite.netlify.app/"
+          github_link="https://github.com/RadosavPanic/Crown-Clothing"
         />
 
         <ProjectCard
           src="/Forkify.png"
           title="Food Search Website"
           description="Explore a vast collection of recipes with a powerful search bar and bookmark favorites for easy access. Adjust servings to calculate ingredient needs, check prep times, and access publisher links. Create and upload your own recipes to share with others."
-          demo="https://forkify-search-food.netlify.app/"
+          demo_link="https://forkify-search-food.netlify.app/"
+          github_link="https://github.com/RadosavPanic/forkify"
         />
       </div>
     </div>

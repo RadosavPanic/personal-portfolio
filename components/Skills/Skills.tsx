@@ -12,12 +12,12 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-10 py-60"
+      className="flex flex-col items-center justify-center gap-5 h-full relative overflow-hidden pb-10 py-60"
       style={{ transform: "scale(0.9)" }}
     >
       <SkillsText />
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 md:scale-90 sm:scale-75 items-center">
         {Frontend_skills.map((image, index) => (
           <SkillDataProvider
             src={image.Image}
@@ -30,7 +30,7 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 md:scale-90 sm:scale-75 items-center">
         {Frameworks.map((image, index) => (
           <SkillDataProvider
             src={image.Image}
@@ -43,7 +43,7 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 md:scale-90 sm:scale-75 items-center">
         {Backend_skills.map((image, index) => (
           <SkillDataProvider
             src={image.Image}
@@ -56,7 +56,7 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <div className="flex flex-row flex-wrap justify-around items-center mt-4 gap-5 md:scale-90 sm:scale-75">
         {Other_skills.map((image, index) => (
           <SkillDataProvider
             src={image.Image}
