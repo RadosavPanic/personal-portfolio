@@ -31,7 +31,7 @@ export const Frontend_skills = [
   },
   {
     skill_name: "Redux",
-    Image: "/redux.png",
+    Image: "/reduxjs.png",
     width: 80,
     height: 80,
   },

@@ -14,7 +14,7 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col-reverse md:flex-row items-center justify-center px-20 md:mt-40 mt-[400px] w-full z-[20]"
+      className="flex flex-col-reverse md:flex-row items-center justify-center md:px-20 px-10 md:mt-40 lg:mt-80 xl:mt-60 mt-[500px] w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -27,7 +27,7 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-6 md:text-6xl text-5xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
             Your future is created by what
@@ -49,7 +49,7 @@ const HeroContent = () => {
 
         <motion.a
           variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg md:max-w-[200px] max-w-full"
           href="#skills"
         >
           Learn More
@@ -58,7 +58,7 @@ const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center md:mb-0 mb-10"
+        className="w-full h-full flex justify-center items-center md:mb-0 md:mt-0 mb-10"
       >
         <Image
           src="/mainIconsdark.svg"
