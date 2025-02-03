@@ -33,7 +33,7 @@ const Navbar = () => {
         {/* Other devices Nav */}
         <div className="w-[500px] h-full md:flex hidden flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <Link href="#about-me" className="cursor-pointer">
+            <Link href="/about-me" className="cursor-pointer">
               About me
             </Link>
             <Link href="#skills" className="cursor-pointer">
@@ -80,7 +80,7 @@ const Navbar = () => {
         } w-full h-[200px] right-0 absolute bg-[rgba(3,0,20,0.9)] text-gray-300`}
       >
         <Link
-          href="#about-me"
+          href="/about-me"
           className="cursor-pointer"
           onClick={handleToggleMenu}
         >

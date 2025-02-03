@@ -35,7 +35,7 @@ const HeroContent = () => {
               {" "}
               you do today{" "}
             </span>
-            not tommorow
+            - not tommorow
           </span>
         </motion.div>
 
@@ -43,16 +43,17 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a Full Stack Developer with passion for creating applications
-          in Web and Software development. Check out my projects and skills.
+          I&apos;m Radosav, a Full Stack Developer with passion for Web and App
+          Development. From the childhood, I always wanted to explore and learn
+          what&apos;s behind things. That led me to fall in love with tech.
         </motion.p>
 
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg md:max-w-[200px] max-w-full"
-          href="#skills"
+          href="/about-me"
         >
-          Learn More
+          Learn More About Me
         </motion.a>
       </div>
 
