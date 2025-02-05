@@ -1,5 +1,12 @@
 import Link from "next/link";
 import { RxDiscordLogo, RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
+import { Socials } from "@/constants/socials";
+
+const SocialIconsMap: Record<string, JSX.Element> = {
+  LinkedIn: <RxLinkedinLogo />,
+  Github: <RxGithubLogo />,
+  Discord: <RxDiscordLogo />,
+};
 
 const Footer = () => {
   return (
@@ -10,32 +17,17 @@ const Footer = () => {
             <div className="font-bold text-[16px]">Find me on</div>
 
             <div className="flex flex-row gap-5">
-              <Link
-                href="https://www.linkedin.com/in/radosav-panic"
-                target="_blank"
-                className="flex flex-row items-center my-[15px] cursor-pointer"
-              >
-                <RxLinkedinLogo />
-                <span className="text-[15px] ml-[6px]">LinkedIn</span>
-              </Link>
-
-              <Link
-                href="https://github.com/RadosavPanic"
-                target="_blank"
-                className="flex flex-row items-center my-[15px] cursor-pointer"
-              >
-                <RxGithubLogo />
-                <span className="text-[15px] ml-[6px]">GitHub</span>
-              </Link>
-
-              <Link
-                href="https://discord.com/users/410436636845801482"
-                target="_blank"
-                className="flex flex-row items-center my-[15px] cursor-pointer"
-              >
-                <RxDiscordLogo />
-                <span className="text-[15px] ml-[6px]">Discord</span>
-              </Link>
+              {Socials.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  className="flex flex-row items-center my-[15px] cursor-pointer"
+                >
+                  {SocialIconsMap[social.name] ?? null}
+                  <span className="text-[15px] ml-[6px]">{social.name}</span>
+                </Link>
+              ))}
             </div>
           </div>
 

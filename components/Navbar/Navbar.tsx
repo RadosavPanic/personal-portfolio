@@ -5,7 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-import { Socials } from "@/constants";
+import { Socials } from "@/constants/socials";
+
+const navigationHrefs: string[] = ["/", "about-me", "skills", "projects"];
+
+const transformLinkName = (navHref: string) => {
+  return navHref.includes("/")
+    ? "Home"
+    : navHref.includes("-")
+    ? navHref.replace("-", " ").replace(navHref[0], navHref[0].toUpperCase())
+    : navHref.replace(navHref[0], navHref[0].toUpperCase());
+};
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,18 +40,14 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Other devices Nav */}
+        {/* Desktop Nav */}
         <div className="w-[500px] h-full md:flex hidden flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <Link href="/about-me" className="cursor-pointer">
-              About me
-            </Link>
-            <Link href="#skills" className="cursor-pointer">
-              Skills
-            </Link>
-            <Link href="#projects" className="cursor-pointer">
-              Projects
-            </Link>
+            {navigationHrefs.slice(1).map((navHref) => (
+              <Link key={navHref} href={navHref} className="cursor-pointer">
+                {transformLinkName(navHref)}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -77,29 +83,18 @@ const Navbar = () => {
           isMenuOpen
             ? "flex flex-col items-center justify-evenly gap-3"
             : "hidden"
-        } w-full h-[200px] right-0 absolute bg-[rgba(3,0,20,0.9)] text-gray-300`}
+        } w-full h-[200px] py-4 right-0 absolute bg-[rgba(3,0,20,0.9)] text-gray-300`}
       >
-        <Link
-          href="/about-me"
-          className="cursor-pointer"
-          onClick={handleToggleMenu}
-        >
-          About me
-        </Link>
-        <Link
-          href="#skills"
-          className="cursor-pointer"
-          onClick={handleToggleMenu}
-        >
-          Skills
-        </Link>
-        <Link
-          href="#projects"
-          className="cursor-pointer"
-          onClick={handleToggleMenu}
-        >
-          Projects
-        </Link>
+        {navigationHrefs.map((navHref) => (
+          <Link
+            key={navHref}
+            href={navHref}
+            className="cursor-pointer"
+            onClick={handleToggleMenu}
+          >
+            {transformLinkName(navHref)}
+          </Link>
+        ))}
 
         <div className="flex flex-row items-center justify-center gap-3 pb-3">
           {Socials.map((social) => (

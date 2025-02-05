@@ -1,12 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
 import Image from "next/image";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 const About = () => {
   return (
@@ -35,7 +31,7 @@ const About = () => {
           >
             A little bit about me
           </motion.div>
-          <motion.p
+          <motion.div
             variants={slideInFromLeft(0.8)}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
@@ -48,9 +44,9 @@ const About = () => {
               Relevant technologies I learned are C and C# PLs, and Assembly
               basics.
             </p>
-          </motion.p>
+          </motion.div>
 
-          <motion.p
+          <motion.div
             variants={slideInFromLeft(1.5)}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
@@ -66,9 +62,9 @@ const About = () => {
               Linux architecture, and even developed my own game in Unity Game
               Engine.
             </p>
-          </motion.p>
+          </motion.div>
 
-          <motion.p
+          <motion.div
             variants={slideInFromLeft(2.5)}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
@@ -82,8 +78,8 @@ const About = () => {
               documentation and experimenting with different technologies, I've
               developed a strong foundation in programming.
             </p>
-          </motion.p>
-          <motion.p
+          </motion.div>
+          <motion.div
             variants={slideInFromLeft(3.5)}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
@@ -92,7 +88,7 @@ const About = () => {
               can begin my journey, learn, and contribute. While I have prior
               work experience, this will be my first role in IT programming.
             </p>
-          </motion.p>
+          </motion.div>
         </div>
       </motion.div>
     </div>

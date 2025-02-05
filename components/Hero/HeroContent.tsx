@@ -39,14 +39,19 @@ const HeroContent = () => {
           </span>
         </motion.div>
 
-        <motion.p
+        <motion.div
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m Radosav, a Full Stack Developer with passion for Web and App
-          Development. From the childhood, I always wanted to explore and learn
-          what&apos;s behind things. That led me to fall in love with tech.
-        </motion.p>
+          <p>
+            I&apos;m Radosav, a Full Stack Developer with passion for Web and
+            App Development.
+          </p>
+          <p>
+            From the childhood, I always wanted to explore and learn what&apos;s
+            behind things. That led me to fall in love with tech.
+          </p>
+        </motion.div>
 
         <motion.a
           variants={slideInFromLeft(1)}

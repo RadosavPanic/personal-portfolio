@@ -11,7 +11,7 @@ interface ProjectProps {
   github_link: string;
 }
 
-const ProjectCard = ({
+const ProjectsPreviewCard = ({
   src,
   title,
   description,
@@ -56,4 +56,4 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export default ProjectsPreviewCard;

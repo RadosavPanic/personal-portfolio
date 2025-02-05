@@ -1,14 +1,14 @@
 import Hero from "@/components/Hero/Hero";
-import Projects from "@/components/Projects/Projects";
-import Skills from "@/components/Skills/Skills";
+import ProjectsPreview from "@/components/ProjectsPreview/projects-preview.component";
+import SkillsPreview from "@/components/SkillsPreview/skills-preview.component";
 
 const Home = () => {
   return (
     <main className="h-full w-full">
       <div className="flex flex-col gap-20">
         <Hero />
-        <Skills />
-        <Projects />
+        <SkillsPreview />
+        <ProjectsPreview />
       </div>
     </main>
   );
