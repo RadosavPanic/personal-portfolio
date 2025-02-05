@@ -10,27 +10,29 @@ const About = () => {
       <motion.div
         initial="hidden"
         animate="visible"
-        className="flex flex-col md:flex-row items-center justify-center md:px-20 px-10 mt-[120px] w-full z-[20]"
+        className="flex flex-col lg:flex-row items-center justify-center md:px-20 px-10 mt-[120px] w-full z-[20]"
       >
         <motion.div
           variants={slideInFromRight(0.8)}
-          className="w-full h-full flex justify-end items-center md:mb-0 md:mt-0 mb-10"
+          className="w-full h-full flex justify-center items-center mb-10"
         >
           <Image
-            src="/mainIconsdark.svg"
-            alt="work icons"
+            src="/personal_photo.png"
+            alt="personal photo"
+            className="rounded-lg lg:max-h-[400px] lg:max-w-[400px] md:max-h-[400px] md:max-w-[400px] max-h-[360px] max-w-[360px]"
             height={650}
             width={650}
           />
         </motion.div>
 
-        <div className="h-full w-full flex flex-col gap-2 justify-center items-start m-auto text-start">
+        <div className="h-full w-full flex flex-col gap-2 ml-4 justify-center items-start m-auto text-start">
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="text-[30px] text-white font-medium text-start"
           >
             A little bit about me
           </motion.div>
+
           <motion.div
             variants={slideInFromLeft(0.8)}
             className="text-lg text-gray-400 my-3 max-w-[650px]"

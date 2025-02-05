@@ -14,12 +14,12 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col-reverse md:flex-row items-center justify-center md:px-20 px-10 md:mt-40 lg:mt-80 xl:mt-60 mt-[500px] w-full z-[20]"
+      className="flex flex-col-reverse lg:flex-row items-center justify-center md:px-20 px-10 mt-[200px] md:mt-20 lg:mt-[80px] xl:mt-60 w-full z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start ml-2">
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
+          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] lg:mt-20"
         >
           <CodeBracketIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">Full Stack Developer</h1>
@@ -55,7 +55,7 @@ const HeroContent = () => {
 
         <motion.a
           variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg md:max-w-[200px] max-w-full"
+          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg lg:max-w-[250px] md:max-w-md  max-w-full"
           href="/about-me"
         >
           Learn More About Me
@@ -64,13 +64,14 @@ const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center md:mb-0 md:mt-0 mb-10"
+        className="w-full h-full flex justify-center items-center md:mt-10 mt-[-30px] mb-20"
       >
         <Image
-          src="/mainIconsdark.svg"
-          alt="work icons"
-          height={650}
-          width={650}
+          src="/personal_photo.png"
+          alt="personal photo"
+          className="md:max-h-[450px] md:max-w-[450px] max-h-[360px] max-w-[360px] rounded-lg"
+          height={600}
+          width={600}
         />
       </motion.div>
     </motion.div>

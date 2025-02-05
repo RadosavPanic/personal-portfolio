@@ -1,148 +1,159 @@
-export const Frontend_skills = [
+export type SkillProps = {
+  name: string;
+  src: string;
+  width: number;
+  height: number;
+};
+
+export const Tech_skills: SkillProps[] = [
   {
-    skill_name: "Html",
-    Image: "/html.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Css",
-    Image: "/css.png",
-    width: 90,
-    height: 90,
-  },
-  {
-    skill_name: "JavaScript",
-    Image: "/javascript.png",
+    name: "JavaScript",
+    src: "/javascript.png",
     width: 65,
     height: 65,
   },
   {
-    skill_name: "TypeScript",
-    Image: "/typescript.png",
+    name: "TypeScript",
+    src: "/typescript.png",
     width: 70,
     height: 70,
   },
-  {
-    skill_name: "ReactJS",
-    Image: "/reactjs.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Redux",
-    Image: "/reduxjs.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Redux-saga",
-    Image: "/redux-saga.png",
-    width: 130,
-    height: 130,
-  },
-];
 
-export const Frameworks = [
   {
-    skill_name: "NextJS",
-    Image: "/nextjs.png",
+    name: "C Sharp",
+    src: "/csharp.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "GatsbyJS",
-    Image: "/gatsbyjs.png",
+    name: "Python",
+    src: "/python.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "Material UI",
-    Image: "/materialui.png",
-    width: 90,
-    height: 90,
+    name: "Java",
+    src: "/java.png",
+    width: 100,
+    height: 110,
   },
   {
-    skill_name: "Tailwind CSS",
-    Image: "/tailwindcss.png",
+    name: "NextJS",
+    src: "/nextjs.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "Framer Motion",
-    Image: "/framermotion.png",
-    width: 80,
-    height: 80,
-  },
-];
-
-export const Backend_skills = [
-  {
-    skill_name: "NodeJS",
-    Image: "/nodejs.png",
+    name: "GatsbyJS",
+    src: "/gatsbyjs.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "ExpressJS",
-    Image: "/expressjs.png",
+    name: "ASP.NET",
+    src: "/aspnet.png",
+    width: 120,
+    height: 120,
+  },
+  {
+    name: "ReactJS",
+    src: "/reactjs.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "MongoDB",
-    Image: "/mongodb.png",
-    width: 40,
-    height: 40,
-  },
-  {
-    skill_name: "Firebase",
-    Image: "/firebase.png",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "GraphQL",
-    Image: "/graphql.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Stripe Payments",
-    Image: "/stripe.webp",
-    width: 80,
-    height: 80,
-  },
-];
-
-export const Other_skills = [
-  {
-    skill_name: "Python",
-    Image: "/python.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "C Sharp",
-    Image: "/csharp.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Java",
-    Image: "/java.png",
+    name: "PWA",
+    src: "/pwa.png",
     width: 110,
     height: 110,
   },
   {
-    skill_name: "Unity",
-    Image: "/unity.png",
+    name: "Redux",
+    src: "/reduxjs.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "MySQL",
-    Image: "/mysql.png",
+    name: "Redux-saga",
+    src: "/redux-saga.png",
+    width: 130,
+    height: 130,
+  },
+  {
+    name: "Material UI",
+    src: "/materialui.png",
+    width: 90,
+    height: 90,
+  },
+  {
+    name: "NodeJS",
+    src: "/nodejs.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "ExpressJS",
+    src: "/expressjs.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "Jest",
+    src: "/jest.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "Selenium",
+    src: "/selenium.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "Postman",
+    src: "/postman.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "MySQL",
+    src: "/mysql.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "MongoDB",
+    src: "/mongodb.png",
+    width: 40,
+    height: 40,
+  },
+  {
+    name: "Firebase",
+    src: "/firebase.png",
+    width: 55,
+    height: 55,
+  },
+  {
+    name: "GraphQL",
+    src: "/graphql.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "Stripe Payments",
+    src: "/stripe.webp",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "Docker",
+    src: "/docker.png",
+    width: 100,
+    height: 100,
+  },
+  {
+    name: "Unity",
+    src: "/unity.png",
     width: 80,
     height: 80,
   },

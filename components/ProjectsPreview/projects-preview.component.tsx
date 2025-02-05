@@ -7,7 +7,7 @@ const ProjectsPreview = () => {
       id="projects"
       className="flex flex-col items-center justify-center py-10"
     >
-      <h1 className="md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+      <h1 className="md:text-5xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
         Some of my projects
       </h1>
       <div className="h-full w-full flex flex-col flex-wrap justify-around md:flex-row gap-10 px-10">
