@@ -151,10 +151,78 @@ export const Tech_skills: SkillProps[] = [
     width: 100,
     height: 100,
   },
-  {
-    name: "Unity",
-    src: "/unity.png",
-    width: 80,
-    height: 80,
-  },
 ];
+
+export const SkillGroups = {
+  technologies: {
+    list: [
+      "JavaScript",
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Redux",
+      "ASP.NET",
+      "Gatsby",
+      "Apollo GraphQL",
+    ],
+    info: {
+      JavaScript:
+        "Proficiency advanced topics such as Closures, Scopes, IIFE, Higher-order functions, Async JS, Promises, Event Delegation, Prototypes, Immutability.",
+      React:
+        "Knowledge of React Ecosystem and built-ins such as Context API, Hooks, React Router, Redux, React Query, React Lazy & Suspense, Apollo Client, Material UI, Tailwind CSS, Styled Components, Framer Motion, React Three Fiber. \nImplemented React-Redux with Redux-Saga and Redux-Thunk middlewares from scratch. Implemented Redux-Toolkit as abstracted solution.\n Implemented Progressive Web App solution checked by Google Lighthouse.",
+      TypeScript:
+        "Implemented strongly typed redux store internals - sagas, reducers, selectors and actions. Implemented strongly typed firebase utils and react components.",
+    },
+  },
+  backend: {
+    list: [
+      "C#",
+      "Python",
+      "Java",
+      "Node.js",
+      "MongoDB",
+      "MySQL",
+      "Firebase",
+      "Stripe",
+      "OAuth",
+      "Docker",
+    ],
+    info: {
+      Python:
+        "Experience with CGI, Sockets, Flask. Implemented Data Science solutions with Streamlit and Pandas. Implemented package network tracker. Experience with sql versions: pymysql, sqlite3.",
+      ["C#"]:
+        "Experience with WinForms, ADO.NET, LINQ. Experience with Unity Game Engine.",
+      ["Node.js"]:
+        "Implemented web servers, routing, CRUD operations with MongoDB, own authentication using Passport.js, OAuth, Image-to-PDF converter. Implemented task manager command-line interface.",
+      Firebase:
+        "Implemented Firestore database and Authentication methods, strongly type checked by TypeScript.",
+      Java: "Experience with Tomcat server, Servlets and JSP engine.",
+    },
+  },
+  testing: {
+    list: [
+      "Jest",
+      "Enzyme",
+      "React Testing Library",
+      "Selenium",
+      "JUnit",
+      "Postman",
+    ],
+    info: {
+      Tests:
+        "Experience with Enzyme and Jest. Used modern way - React Testing Library to write unit and snapshot tests for React components.\nUsed Postman for testing CRUD operations with database.",
+      Selenium:
+        "Experience with automated testing and extracting web apps data in Java, in pair with JUnit.",
+    },
+  },
+  tooling: {
+    list: ["Webpack", "Parcel", "Babel"],
+    info: {
+      Webpack: "Configured loaders with html webpack plugin from scratch.",
+      Parcel:
+        "Used Parcel as an alternative bundler for rapid development without extensive configurations.",
+      Babel:
+        "Used Babel for transpiling modern JavaScript and JSX to ensure compatibility with older browsers. Integrated polyfills (core-js, regenerator-runtime) for supporting ES6+ features in legacy environments.",
+    },
+  },
+};

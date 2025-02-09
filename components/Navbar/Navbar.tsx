@@ -41,8 +41,8 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="w-[500px] h-full md:flex hidden flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+        <div className="w-[500px] h-full md:flex hidden flex-row items-center justify-between md:ml-10 md:mr-10">
+          <div className="w-full h-auto flex justify-between items-center border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] rounded-full text-gray-200">
             {navigationHrefs.slice(1).map((navHref) => (
               <Link key={navHref} href={navHref} className="cursor-pointer">
                 {transformLinkName(navHref)}
@@ -83,7 +83,7 @@ const Navbar = () => {
           isMenuOpen
             ? "flex flex-col items-center justify-evenly gap-3"
             : "hidden"
-        } w-full h-[200px] py-4 right-0 absolute bg-[rgba(3,0,20,0.9)] text-gray-300`}
+        } w-full h-[200px] py-4 right-0 absolute bg-[rgb(0,0,22)] shadow-lg shadow-[#2A0E61]/50 text-gray-300`}
       >
         {navigationHrefs.map((navHref) => (
           <Link

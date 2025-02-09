@@ -43,8 +43,12 @@ const About = () => {
               &#40;average &#62; 4,5&#41;.
             </p>
             <p>
-              Relevant technologies I learned are C and C# PLs, and Assembly
+              During my studies, I gained experience with C, C#, and Assembly
               basics.
+            </p>
+            <p>
+              I also received an award for the best database and graduation
+              thesis, developed using MS Access.
             </p>
           </motion.div>
 
@@ -53,16 +57,19 @@ const About = () => {
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
             <p>
-              I then earned my Bachelor's in Computer Science from VISER, new
-              computer technologies course. My studies covered many different
-              courses and interesting topics.
+              I then earned my Bachelor's degree in Computer Science from VISER,
+              new computer technologies course.
             </p>
 
             <p>
-              I've learned about many different PLs, RDMBS, DSA, Software
-              testing, Wordpress, Art and Animation, Networking and Security,
-              Linux architecture, and even developed my own game in Unity Game
-              Engine.
+              My studies covered various programming languages, SQL and NoSQL
+              databases, data structures and algorithms, software testing,
+              WordPress, networking and security, Linux architecture and more.
+            </p>
+
+            <p>
+              For my graduation thesis, I explored advanced concepts of Next.js
+              and developed a web application to demonstrate them in practice.
             </p>
           </motion.div>
 
@@ -71,14 +78,14 @@ const About = () => {
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
             <p>
-              For the past three years, I was studying web technologies on free
-              resources such as W3Schools, FreeCodeCamp, Youtube, and other paid
-              sources such as Udemy and Zero To Mastery Academy.
+              Over the past three years, I've been continuously expanding my
+              knowledge of web technologies through free and paid resources,
+              such as W3Schools, FreeCodeCamp, YouTube, Udemy, and Zero To
+              Mastery Academy.
             </p>
             <p>
-              Both personal and course projects helped me grow a lot. By reading
-              documentation and experimenting with different technologies, I've
-              developed a strong foundation in programming.
+              By reading documentation, experimenting, and building various
+              projects, I have developed a strong foundation in programming.
             </p>
           </motion.div>
           <motion.div
@@ -87,8 +94,9 @@ const About = () => {
           >
             <p>
               I am currently looking for my first job in IT at a company where I
-              can begin my journey, learn, and contribute. While I have prior
-              work experience, this will be my first role in IT programming.
+              can begin my journey, learn, and contribute. While I have previous
+              work experience, this will be my first role in IT industry as a
+              software developer.
             </p>
           </motion.div>
         </div>

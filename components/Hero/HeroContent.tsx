@@ -27,16 +27,16 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 md:text-6xl text-5xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-1 mt-6 md:text-6xl text-5xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
-          <span>
-            Your future is created by what
+          <p>Your future is created</p>
+          <p>
+            by what{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              {" "}
-              you do today{" "}
+              you do today
             </span>
-            - not tommorow
-          </span>
+          </p>
+          <p>- not tommorow</p>
         </motion.div>
 
         <motion.div
