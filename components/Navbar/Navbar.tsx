@@ -1,21 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-import { Socials } from "@/constants/socials";
-
-const navigationHrefs: string[] = ["/", "about-me", "skills", "projects"];
-
-const transformLinkName = (navHref: string) => {
-  return navHref.includes("/")
-    ? "Home"
-    : navHref.includes("-")
-    ? navHref.replace("-", " ").replace(navHref[0], navHref[0].toUpperCase())
-    : navHref.replace(navHref[0], navHref[0].toUpperCase());
-};
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,91 +17,48 @@ const Navbar = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 md:bg-[#03001417] bg-[#030014b3] backdrop-blur-md z-50 px-10">
+    <div className="w-full fixed h-20 top-0 backdrop-blur-xl z-50 px-10 md:px-5">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto md:px-[10px] px-0">
-        <Link href="/" className="h-auto w-auto flex flex-row items-center">
-          <Image
-            src="/NavLogo.png"
-            alt="logo"
-            width={40}
-            height={40}
-            className="cursor-pointer hover:animate-slowspin"
-          />
-          <span className="font-bold ml-[10px] md:block text-gray-300">
+        <Link
+          href="/"
+          className="h-auto w-auto flex flex-row items-center cursor-pointer"
+        >
+          <Image src="/rp-logo.png" alt="logo" width={40} height={40} />
+          <span
+            className="font-bold ml-3 hidden md:block hover:text-blue-500"
+            title="Back to Homepage"
+          >
             Radosav Panic
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="w-[500px] h-full md:flex hidden flex-row items-center justify-between md:ml-10 md:mr-10">
-          <div className="w-full h-auto flex justify-between items-center border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] rounded-full text-gray-200">
-            {navigationHrefs.slice(1).map((navHref) => (
-              <Link key={navHref} href={navHref} className="cursor-pointer">
-                {transformLinkName(navHref)}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="md:flex hidden flex-row gap-5">
-          {Socials.map((social) => (
-            <Link href={social.href} target="_blank" key={social.name}>
-              <Image
-                src={social.src}
-                alt={social.name}
-                width={social.width}
-                height={social.height}
-              />
-            </Link>
-          ))}
-        </div>
+        <DesktopMenu />
 
         {/* Mobile Nav */}
         {isMenuOpen ? (
           <IoClose
-            className="md:hidden flex flex-row text-[#ffffff] w-[25px] h-[25px]"
+            className="md:hidden flex flex-row w-6 h-6"
             onClick={handleToggleMenu}
           />
         ) : (
           <GiHamburgerMenu
-            className="md:hidden flex flex-row text-[#ffffff] w-[20px] h-[20px]"
+            className="md:hidden flex flex-row w-5 h-5"
             onClick={handleToggleMenu}
           />
         )}
       </div>
 
-      <div
-        className={`md:hidden ${
-          isMenuOpen
-            ? "flex flex-col items-center justify-evenly gap-3"
-            : "hidden"
-        } w-full h-[200px] py-4 right-0 absolute bg-[rgb(0,0,22)] shadow-lg shadow-[#2A0E61]/50 text-gray-300`}
-      >
-        {navigationHrefs.map((navHref) => (
-          <Link
-            key={navHref}
-            href={navHref}
-            className="cursor-pointer"
-            onClick={handleToggleMenu}
-          >
-            {transformLinkName(navHref)}
-          </Link>
-        ))}
-
-        <div className="flex flex-row items-center justify-center gap-3 pb-3">
-          {Socials.map((social) => (
-            <Link href={social.href} target="_blank" key={social.name}>
-              <Image
-                src={social.src}
-                alt={social.name}
-                width={social.width}
-                height={social.height}
-              />
-            </Link>
-          ))}
-        </div>
-      </div>
+      <MobileMenu isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
     </div>
   );
 };

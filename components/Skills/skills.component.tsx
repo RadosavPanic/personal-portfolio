@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { slideInFromLeft, fadeIn } from "@/utils/motion";
 import { SkillGroups } from "@/constants/skills";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
@@ -24,7 +24,7 @@ const Skills = () => {
         className="flex flex-col items-center justify-center gap-10 md:px-20 px-10 mt-[120px] w-full z-[20]"
       >
         <motion.p
-          variants={slideInFromLeft(0.5)}
+          variants={slideInFromLeft}
           className="h-full w-full text-[30px] text-center font-medium text-white"
         >
           My skills in development

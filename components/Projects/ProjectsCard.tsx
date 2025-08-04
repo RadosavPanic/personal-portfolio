@@ -11,7 +11,7 @@ interface ProjectProps {
   github_link: string;
 }
 
-const ProjectsPreviewCard = ({
+const ProjectsCard = ({
   src,
   title,
   description,
@@ -19,19 +19,21 @@ const ProjectsPreviewCard = ({
   github_link,
 }: ProjectProps) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border lg:max-w-[30%] md:max-w-[43%] sm:max-w-[100%] border-[#2A0E61] z-[30]">
+    <div className="relative overflow-hidden lg:max-w-[30%] md:max-w-[43%] sm:max-w-[100%] z-30 my-5">
+      <div>
+        <h1 className="text-2xl font-semibold text-center">{title}</h1>
+      </div>
+
       <Image
         src={src}
         alt={title}
         width={1000}
         height={1000}
-        className="w-full object-contain"
+        className="w-full object-contain mt-5"
       />
 
-      <div className="relative p-4">
-        <h1 className="text-2xl font-semibold text-white">{title}</h1>
+      <div className="relative mt-3">
         <p className="mt-2 text-gray-300">{description}</p>
-
         <div className="flex flex-row items-center justify-between">
           <Link
             href={demo_link}
@@ -56,4 +58,4 @@ const ProjectsPreviewCard = ({
   );
 };
 
-export default ProjectsPreviewCard;
+export default ProjectsCard;

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
@@ -43,12 +43,8 @@ const About = () => {
               &#40;average &#62; 4,5&#41;.
             </p>
             <p>
-              During my studies, I gained experience with C, C#, and Assembly
-              basics.
-            </p>
-            <p>
-              I also received an award for the best database and graduation
-              thesis, developed using MS Access.
+              I received an award for the best database and graduation thesis,
+              developed using MS Access.
             </p>
           </motion.div>
 
