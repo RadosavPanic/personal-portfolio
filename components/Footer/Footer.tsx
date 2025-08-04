@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RxDiscordLogo, RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
 import { Socials } from "@/constants/socials";
+import { JSX } from "react";
 
 const SocialIconsMap: Record<string, JSX.Element> = {
   LinkedIn: <RxLinkedinLogo />,

@@ -13,7 +13,7 @@ const About = () => {
         className="flex flex-col lg:flex-row items-center justify-center md:px-20 px-10 mt-[120px] w-full z-[20]"
       >
         <motion.div
-          variants={slideInFromRight(0.8)}
+          variants={slideInFromRight}
           className="w-full h-full flex justify-center items-center mb-10"
         >
           <Image
@@ -27,14 +27,14 @@ const About = () => {
 
         <div className="h-full w-full flex flex-col gap-2 ml-4 justify-center items-start m-auto text-start">
           <motion.div
-            variants={slideInFromLeft(0.5)}
+            variants={slideInFromLeft}
             className="text-[30px] text-white font-medium text-start"
           >
             A little bit about me
           </motion.div>
 
           <motion.div
-            variants={slideInFromLeft(0.8)}
+            variants={slideInFromLeft}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
             <p>
@@ -49,7 +49,7 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            variants={slideInFromLeft(1.5)}
+            variants={slideInFromLeft}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
             <p>
@@ -70,7 +70,7 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            variants={slideInFromLeft(2.5)}
+            variants={slideInFromLeft}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
             <p>
@@ -85,7 +85,7 @@ const About = () => {
             </p>
           </motion.div>
           <motion.div
-            variants={slideInFromLeft(3.5)}
+            variants={slideInFromLeft}
             className="text-lg text-gray-400 my-3 max-w-[650px]"
           >
             <p>
