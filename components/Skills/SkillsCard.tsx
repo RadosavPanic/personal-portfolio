@@ -1,11 +1,11 @@
-import SkillDataProvider from "./skill-data-provider.component";
+import SkillsDataProvider from "./SkillsDataProvider";
 import { SkillProps } from "@/constants/skills";
 
-type SkillsPreviewCardProps = {
+type SkillsCardProps = {
   skills: SkillProps[];
 };
 
-const SkillsPreviewCard = ({ skills }: SkillsPreviewCardProps) => {
+const SkillsCard = ({ skills }: SkillsCardProps) => {
   return (
     <>
       {skills
@@ -26,10 +26,10 @@ const SkillsPreviewCard = ({ skills }: SkillsPreviewCardProps) => {
         .map((skillGroup, groupIndex) => (
           <div
             key={groupIndex}
-            className="flex flex-row justify-around flex-wrap mt-4 gap-5 md:scale-90 sm:scale-75 items-center"
+            className="flex flex-row items-center justify-around flex-wrap gap-5 md:gap-20 mt-10 md:mt-20"
           >
             {skillGroup.map((skill, index) => (
-              <SkillDataProvider
+              <SkillsDataProvider
                 src={skill.src}
                 name={skill.name}
                 key={index}
@@ -44,4 +44,4 @@ const SkillsPreviewCard = ({ skills }: SkillsPreviewCardProps) => {
   );
 };
 
-export default SkillsPreviewCard;
+export default SkillsCard;

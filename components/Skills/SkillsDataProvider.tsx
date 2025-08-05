@@ -9,7 +9,7 @@ type SkillPropsExtended = SkillProps & {
   index: number;
 };
 
-const SkillDataProvider = ({
+const SkillsDataProvider = ({
   name,
   src,
   height,
@@ -34,4 +34,4 @@ const SkillDataProvider = ({
   );
 };
 
-export default SkillDataProvider;
+export default SkillsDataProvider;
