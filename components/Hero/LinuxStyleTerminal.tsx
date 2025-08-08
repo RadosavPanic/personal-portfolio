@@ -5,7 +5,7 @@ const LinuxStyleTerminal = () => {
   return (
     <motion.div
       variants={slideInFromBottom}
-      className="bg-[#0f1117] p-6 rounded-lg w-full max-w-3xl font-mono mt-10 shadow-lg"
+      className="w-full max-w-3xl mt-10 p-6 bg-[#0f1117] rounded-lg shadow-lg font-mono"
     >
       <div className="flex items-center mb-4">
         <span className="h-3 w-3 rounded-full bg-red-500 mr-2"></span>

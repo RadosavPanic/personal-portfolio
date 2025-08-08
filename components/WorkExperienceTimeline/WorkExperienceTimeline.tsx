@@ -1,8 +1,11 @@
 "use client";
 
-import { slideInFromBottom } from "@/utils/motion";
-import { motion } from "motion/react";
 import Image from "next/image";
+
+import { motion } from "motion/react";
+import { slideInFromBottom } from "@/utils/motion";
+
+import { MdWorkHistory } from "react-icons/md";
 
 const experiences = [
   {
@@ -11,6 +14,8 @@ const experiences = [
     company: "Mei Ta Europe",
     date: "July 2021 - June 2025",
     image_url: "/meita_europe.png",
+    description:
+      "Oversaw quality control and process optimization in automotive parts production, performing chemical composition analysis with specialized software and machinery. Handled data processing, modification, and standardization, including database transfers and backup creation.",
   },
   {
     id: 2,
@@ -18,6 +23,8 @@ const experiences = [
     company: "Self Employed",
     date: "May 2024 - Present",
     image_url: "/self_employed.png",
+    description:
+      "Tutored students in programming fundamentals and advanced topics across multiple languages, including JavaScript, Python, Java, C# and more. Used various learning materials and practical examples to enhance understanding of different topics, and provided hands-on coding sessions.",
   },
   {
     id: 3,
@@ -25,49 +32,59 @@ const experiences = [
     company: "NCR Voyix",
     date: "June 2025 - Present",
     image_url: "/ncr_voyix.png",
+    description:
+      "Maintaining and optimizing NCR Aloha POS FOH and BOH systems for Wendy's US and Canada franchise locations. Managing configuration, remote updates, filesystem, and user role administration. Oversee POS peripherals, payment processing systems, networking infrastructure, and kitchen technologies, ensuring stability, synchronization, and peak performance across all operational areas.",
   },
 ];
 
 const WorkExperienceTimeline = () => {
   return (
-    <section className="md:my-32">
-      <motion.div
-        variants={slideInFromBottom}
-        className="text-4xl font-medium my-4 text-center"
-      >
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={slideInFromBottom}
+      className="flex flex-col items-center justify-center z-20"
+      id="work-experience"
+    >
+      <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
+        <MdWorkHistory className="mr-2 text-blue-500" />
         Previous work experience
-      </motion.div>
+      </div>
 
-      <div className="w-full py-10">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          className="flex flex-col lg:flex-row justify-center items-center gap-6 md:gap-32"
-        >
-          {experiences.map((exp, index) => (
-            <div
-              key={exp.id}
-              className={`relative z-10 p-4 sm:p-6 mt-0 bg-[#0f1117] text-center rounded-lg transition duration-300 w-[90%] max-w-[300px] shadow-none hover:shadow-lg hover:shadow-blue-500 cursor-pointer ${
-                index % 2 !== 0 && "lg:mt-32"
-              }`}
-            >
+      <div className="w-full flex flex-wrap justify-center items-center px-4 lg:px-0 py-10 gap-20 lg:gap-20">
+        {experiences.map((exp) => (
+          <div
+            key={exp.id}
+            className="flex flex-row flex-shrink-0 flex-grow-0 basis-full max-w-full lg:basis-[40%] lg:max-w-[40%] bg-gradient-to-br from-blue-700 to-black rounded-2xl p-8"
+          >
+            <div className="flex flex-col items-start justify-start mr-10">
               <Image
                 alt={exp.title}
                 src={exp.image_url}
-                width={60}
-                height={60}
-                className="mx-auto mb-3"
+                width={80}
+                height={80}
+                className="mb-4"
               />
-              <h3 className="font-semibold text-sm sm:text-base my-2 text-green-500">
+              <h4 className="font-mono text-base text-[#00ff99] mb-2 text-center">
+                {exp.company}
+              </h4>
+              <p className="font-mono text-sm text-gray-300 text-center">
+                {exp.date}
+              </p>
+            </div>
+
+            <div className="flex flex-col items-start justify-start w-2/3">
+              <h3 className="font-mono font-bold text-xl lg:text-2xl text-white my-2">
                 {exp.title}
               </h3>
-              <h4 className="text-xs md:text-sm my-2">{exp.company}</h4>
-              <p className="text-[11px] md:text-xs italic">{exp.date}</p>
+              <p className="font-mono text-sm text-gray-300">
+                {exp.description}
+              </p>
             </div>
-          ))}
-        </motion.div>
+          </div>
+        ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

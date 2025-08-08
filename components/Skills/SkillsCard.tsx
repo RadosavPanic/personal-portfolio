@@ -26,7 +26,7 @@ const SkillsCard = ({ skills }: SkillsCardProps) => {
         .map((skillGroup, groupIndex) => (
           <div
             key={groupIndex}
-            className="flex flex-row items-center justify-around flex-wrap gap-5 md:gap-20 mt-10 md:mt-20"
+            className="flex flex-row items-center justify-around flex-wrap gap-5 md:gap-20 mt-10 md:mt-20 px-4"
           >
             {skillGroup.map((skill, index) => (
               <SkillsDataProvider
