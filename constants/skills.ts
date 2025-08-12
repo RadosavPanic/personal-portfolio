@@ -44,12 +44,6 @@ export const Tech_skills: SkillProps[] = [
     height: 80,
   },
   {
-    name: "GatsbyJS",
-    src: "/gatsbyjs.png",
-    width: 80,
-    height: 80,
-  },
-  {
     name: "ASP.NET",
     src: "/aspnet.png",
     width: 120,
@@ -74,26 +68,8 @@ export const Tech_skills: SkillProps[] = [
     height: 80,
   },
   {
-    name: "Redux-saga",
-    src: "/redux-saga.png",
-    width: 130,
-    height: 130,
-  },
-  {
-    name: "Material UI",
-    src: "/materialui.png",
-    width: 90,
-    height: 90,
-  },
-  {
     name: "NodeJS",
     src: "/nodejs.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    name: "ExpressJS",
-    src: "/expressjs.png",
     width: 80,
     height: 80,
   },
@@ -106,12 +82,6 @@ export const Tech_skills: SkillProps[] = [
   {
     name: "Selenium",
     src: "/selenium.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    name: "Postman",
-    src: "/postman.png",
     width: 80,
     height: 80,
   },

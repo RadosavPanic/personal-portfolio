@@ -26,8 +26,8 @@ const Projects = ({ projects }: ProjectsProps) => {
       id="projects"
     >
       <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
-        <GoProjectRoadmap className="mr-2 text-blue-500" />A small selection of
-        my projects
+        <GoProjectRoadmap className="mr-2 text-blue-500" />
+        Selection of Projects
       </div>
 
       <div className="h-full w-full flex flex-col md:flex-row flex-wrap justify-around gap-10 px-10">
