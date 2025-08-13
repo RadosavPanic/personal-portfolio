@@ -1,14 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { motion } from "motion/react";
 import { slideInFromBottom } from "@/utils/motion";
-
-import { MdWorkHistory } from "react-icons/md";
-import { LuCircleFadingPlus } from "react-icons/lu";
-import { useState } from "react";
-import WorkExpModal from "./WorkExpModal";
+import { MdWorkHistory, MdPictureAsPdf } from "react-icons/md";
 
 const experiences = [
   {
@@ -18,7 +15,7 @@ const experiences = [
     date: "July 2021 - June 2025",
     image_url: "/meita_europe.png",
     description:
-      "Oversaw quality control and process optimization in automotive parts production, performing chemical composition analysis with specialized software and machinery. Handled data processing, modification, and standardization, including database transfers and backup creation.",
+      "Managed quality control and process optimization in automotive parts production, performing chemical analysis, data processing, and database management.",
   },
   {
     id: 2,
@@ -27,7 +24,7 @@ const experiences = [
     date: "May 2024 - Present",
     image_url: "/self_employed.png",
     description:
-      "Tutored students in programming fundamentals and advanced topics across multiple languages, including JavaScript, Python, Java, C# and more. Used various learning materials and practical examples to enhance understanding of different topics, and provided hands-on coding sessions.",
+      "Tutored students in programming from fundamentals to advanced topics across multiple languages, using practical examples and hands-on coding.",
   },
   {
     id: 3,
@@ -36,79 +33,81 @@ const experiences = [
     date: "June 2025 - Present",
     image_url: "/ncr_voyix.png",
     description:
-      "Maintaining and optimizing NCR Aloha POS FOH and BOH systems for Wendy's US and Canada franchise locations. Managing configuration, remote updates, filesystem, and user role administration. Oversee POS peripherals, payment processing, networking infrastructure, and kitchen technologies.",
+      "Maintaining and optimizing NCR Aloha POS systems for Wendy's US/Canada, handling configuration, remote updates, peripherals, payments, and network infrastructure.",
   },
 ];
 
-const WorkExperienceTimeline = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedExp, setSelectedExp] = useState<
-    (typeof experiences)[0] | null
-  >(null);
+const WorkExperienceTimeline = () => (
+  <motion.section
+    initial="hidden"
+    animate="visible"
+    variants={slideInFromBottom}
+    className="flex flex-col items-center justify-center px-4"
+    id="work-experience"
+  >
+    <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
+      <MdWorkHistory className="inline-block mr-2 text-blue-500" />
+      Professional Experience
+    </div>
 
-  const handleOpenModal = (exp: (typeof experiences)[0]) => {
-    setSelectedExp(exp);
-    setModalOpen(true);
-  };
+    <div className="w-full max-w-3xl  rounded-lg font-mono">
+      <div className="bg-[#0f1117]/60 rounded-lg">
+        <div className="flex items-center px-6 pt-4 pb-2">
+          <span className="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+          <span className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></span>
+          <span className="h-3 w-3 rounded-full bg-green-500 mr-4"></span>
+          <span className="text-blue-400 font-semibold text-sm">
+            work_experience.sh
+          </span>
+        </div>
 
-  return (
-    <motion.section
-      initial="hidden"
-      animate="visible"
-      variants={slideInFromBottom}
-      className="flex flex-col items-center justify-center z-20"
-      id="work-experience"
-    >
-      <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
-        <MdWorkHistory className="mr-2 text-blue-500" />
-        Previous work experience
+        <p className="px-6 text-pink-500">
+          $ <span className="text-green-500">radosav@portfolio</span>:~$
+          about_me
+        </p>
+
+        <div className="p-4 sm:p-8">
+          {experiences.map((exp, idx) => (
+            <div
+              key={exp.id}
+              className="flex items-start gap-6 mb-4 md:mb-6 last:mb-0"
+            >
+              <div className="flex-shrink-0 flex flex-col items-center gap-2">
+                <Image
+                  src={exp.image_url}
+                  alt={exp.company}
+                  width={48}
+                  height={48}
+                />
+
+                {idx !== experiences.length - 1 && (
+                  <div className="w-px h-24 sm:h-20 md:h-16 bg-gray-600 mt-2"></div>
+                )}
+              </div>
+              <div className="-mt-2">
+                <div className="font-bold text-lg text-white">
+                  {exp.company}
+                </div>
+                <div className="text-sm text-green-500 mb-1">{exp.title}</div>
+                <div className="text-xs mb-2">{exp.date}</div>
+                <div className="text-xs sm:text-sm">{exp.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="w-full flex flex-wrap justify-center items-center px-4 lg:px-0 py-10 gap-20 lg:gap-20">
-        {experiences.map((exp) => (
-          <div
-            key={exp.id}
-            className="flex flex-col xl:flex-row flex-shrink-0 flex-grow-0 basis-full max-w-full lg:basis-[60%] lg:max-w-[60%] xl:basis-[40%] xl:max-w-[40%] font-mono bg-gradient-to-br from-blue-700 to-black rounded-2xl p-8"
-          >
-            <div className="flex flex-col items-center sm:items-start justify-start mr-0 lg:mr-10">
-              <Image
-                alt={exp.title}
-                src={exp.image_url}
-                width={80}
-                height={50}
-                className="mb-4"
-              />
-              <h4 className="text-base text-[#00ff99] mb-2">{exp.company}</h4>
-              <p className="text-sm">{exp.date}</p>
-            </div>
-
-            <div className="w-full xl:w-2/3 flex flex-col items-center sm:items-start justify-start mt-2 xl:-mt-3">
-              <h3 className="font-bold text-lg lg:text-2xl my-2">
-                {exp.title}
-              </h3>
-              <p className="text-sm hidden sm:block">{exp.description}</p>
-              <LuCircleFadingPlus
-                className="w-6 h-6 text-[#00ff99] mt-5 block sm:hidden cursor-pointer"
-                onClick={() => handleOpenModal(exp)}
-              />
-            </div>
-          </div>
-        ))}
+      <div className="w-full mt-7 py-2 flex flex-col md:flex-row items-center justify-center md:justify-start gap-7 md:gap-10">
+        <Link
+          href="#projects"
+          className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_15px_#60a5fa] hover:shadow-[0_0_10px_#60a5fa] transition duration-300 gap-2"
+        >
+          <MdPictureAsPdf className="w-4 h-4" />
+          <span>Download CV</span>
+        </Link>
       </div>
-
-      {selectedExp && (
-        <WorkExpModal
-          open={modalOpen}
-          onOpenChange={setModalOpen}
-          title={selectedExp.title}
-          company={selectedExp.company}
-          date={selectedExp.date}
-          image_url={selectedExp.image_url}
-          description={selectedExp.description}
-        />
-      )}
-    </motion.section>
-  );
-};
+    </div>
+  </motion.section>
+);
 
 export default WorkExperienceTimeline;
