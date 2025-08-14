@@ -5,17 +5,23 @@ import Skills from "@/components/Skills/Skills";
 import WorkExperienceTimeline from "@/components/WorkExperienceTimeline/WorkExperienceTimeline";
 import Projects from "@/components/Projects/Projects";
 
-import { fetchAllProjects, Project } from "@/utils/supabase";
+import {
+  fetchAllProjects,
+  fetchWorkExperiences,
+  Project,
+  WorkExperience,
+} from "@/utils/supabase";
 
 const Home = () => {
   const projects: Project[] = use(fetchAllProjects());
+  const workExperiences: WorkExperience[] = use(fetchWorkExperiences());
 
   return (
     <main className="h-full w-full">
       <div className="flex flex-col gap-20">
         <Hero />
         <Skills />
-        <WorkExperienceTimeline />
+        <WorkExperienceTimeline workExperiences={workExperiences} />
         <Projects projects={projects} />
       </div>
     </main>
