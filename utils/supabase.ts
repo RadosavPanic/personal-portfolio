@@ -36,11 +36,20 @@ export const fetchAllProjects = async () => {
 
 export const fetchWorkExperiences = async () => {
   const { data, error } = await supabase.from("work_experiences").select("*");
-  // .order("id");
   if (error) {
     console.error("Error fetching work experiences:", error.message);
     return [];
   }
 
   return data || [];
+};
+
+export const fetchCVFile = async () => {
+  const { data } = await supabase.storage
+    .from("cv-files")
+    .getPublicUrl("radosav_panic_cv.pdf", {
+      download: true,
+    });
+
+  return data?.publicUrl || "";
 };

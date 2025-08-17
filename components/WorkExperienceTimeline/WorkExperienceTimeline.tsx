@@ -1,25 +1,35 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
 import { motion } from "motion/react";
 
 import { WorkExperience } from "@/utils/supabase";
 import { slideInFromBottom } from "@/utils/motion";
 
 import { MdWorkHistory, MdPictureAsPdf } from "react-icons/md";
+import CvModal from "./CvModal";
 
 type ExperienceProps = {
   workExperiences: WorkExperience[];
+  cvFileUrl: string;
 };
 
-const WorkExperienceTimeline = ({ workExperiences }: ExperienceProps) => {
+const WorkExperienceTimeline = ({
+  workExperiences,
+  cvFileUrl,
+}: ExperienceProps) => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpen = () => setModalOpen(true);
+  const handleClose = () => setModalOpen(false);
+
   return (
     <motion.section
       initial="hidden"
       animate="visible"
       variants={slideInFromBottom}
-      className="flex flex-col items-center justify-center px-4"
+      className="flex flex-col items-center justify-center px-4 z-20"
       id="work-experience"
     >
       <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
@@ -75,15 +85,17 @@ const WorkExperienceTimeline = ({ workExperiences }: ExperienceProps) => {
         </div>
 
         <div className="w-full mt-7 py-2 flex flex-col md:flex-row items-center justify-center md:justify-start gap-7 md:gap-10">
-          <Link
-            href="#projects"
+          <button
+            onClick={handleOpen}
             className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_15px_#60a5fa] hover:shadow-[0_0_10px_#60a5fa] transition duration-300 gap-2"
           >
             <MdPictureAsPdf className="w-4 h-4" />
             <span>Download CV</span>
-          </Link>
+          </button>
         </div>
       </div>
+
+      {modalOpen && <CvModal handleClose={handleClose} cvFileUrl={cvFileUrl} />}
     </motion.section>
   );
 };

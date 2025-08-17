@@ -10,18 +10,23 @@ import {
   fetchWorkExperiences,
   Project,
   WorkExperience,
+  fetchCVFile,
 } from "@/utils/supabase";
 
 const Home = () => {
   const projects: Project[] = use(fetchAllProjects());
   const workExperiences: WorkExperience[] = use(fetchWorkExperiences());
+  const cvFileUrl: string = use(fetchCVFile());
 
   return (
     <main className="h-full w-full">
       <div className="flex flex-col gap-20">
         <Hero />
         <Skills />
-        <WorkExperienceTimeline workExperiences={workExperiences} />
+        <WorkExperienceTimeline
+          workExperiences={workExperiences}
+          cvFileUrl={cvFileUrl}
+        />
         <Projects projects={projects} />
       </div>
     </main>
