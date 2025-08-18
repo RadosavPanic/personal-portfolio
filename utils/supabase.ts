@@ -44,8 +44,8 @@ export const fetchWorkExperiences = async () => {
   return data || [];
 };
 
-export const fetchCVFile = async () => {
-  const { data } = await supabase.storage
+export const fetchCVFile = () => {
+  const { data } = supabase.storage
     .from("cv-files")
     .getPublicUrl("radosav_panic_cv.pdf", {
       download: true,

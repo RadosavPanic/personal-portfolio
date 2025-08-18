@@ -31,7 +31,7 @@ const Hero = () => {
         >
           <Link
             href="#projects"
-            className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_15px_#60a5fa] hover:shadow-[0_0_10px_#60a5fa] transition duration-300 gap-2"
+            className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_10px_#60a5fa] hover:shadow-[0_0_15px_#60a5fa] transition duration-300 gap-2"
           >
             <span>Explore my work</span>
             <MdOutlineKeyboardDoubleArrowDown className="w-4 h-4" />
@@ -39,7 +39,7 @@ const Hero = () => {
 
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_15px_#60a5fa] hover:shadow-[0_0_20px_#60a5fa] transition duration-300 gap-2"
+            className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_10px_#60a5fa] hover:shadow-[0_0_15px_#60a5fa] transition duration-300 gap-2"
           >
             <span>Contact me</span>
             <MdOutgoingMail className="w-4 h-4" />

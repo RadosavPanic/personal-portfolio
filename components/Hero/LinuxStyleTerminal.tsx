@@ -13,7 +13,7 @@ const LinuxStyleTerminal = () => {
         <span className="h-3 w-3 rounded-full bg-green-500 mr-4"></span>
         <span className="text-blue-400 font-semibold text-sm">welcome.sh</span>
       </div>
-      <p className="text-green-400 mb-2">
+      <p className="text-green-400 mb-4">
         Welcome! Thanks for taking the time to check out my website.
       </p>
 

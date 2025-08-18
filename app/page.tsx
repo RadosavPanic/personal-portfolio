@@ -16,7 +16,7 @@ import {
 const Home = () => {
   const projects: Project[] = use(fetchAllProjects());
   const workExperiences: WorkExperience[] = use(fetchWorkExperiences());
-  const cvFileUrl: string = use(fetchCVFile());
+  const cvFileUrl: string = fetchCVFile();
 
   return (
     <main className="h-full w-full">
