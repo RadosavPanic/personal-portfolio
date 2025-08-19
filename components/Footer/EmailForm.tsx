@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 import { toast } from "sonner";
-import { sendEmail } from "@/actions/sendEmail";
 
 import { RxArrowRight } from "react-icons/rx";
 import { ImSpinner4 } from "react-icons/im";
@@ -16,11 +15,23 @@ const EmailForm = () => {
 
     const formData = new FormData(e.currentTarget);
 
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
     try {
       setIsPending(true);
-      const res = await sendEmail(formData);
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-      if (res.success) {
+      const data = await res.json();
+
+      if (data.success) {
         setTimeout(() => {
           setIsPending(false);
           toast("Message sent ✅", {
@@ -29,14 +40,13 @@ const EmailForm = () => {
             unstyled: true,
           });
         }, 1000);
-      } else {
-        toast("Message failed ❌", {
-          description: "Something went wrong. Please try again.",
-          unstyled: true,
-        });
       }
     } catch (error) {
       console.error("Error occured with sending the email:", error);
+      toast("Message failed ❌", {
+        description: "Something went wrong. Please try again.",
+        unstyled: true,
+      });
     }
   };
 
