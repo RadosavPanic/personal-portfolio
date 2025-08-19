@@ -1,14 +1,9 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
 import Link from "next/link";
-import {
-  RxDiscordLogo,
-  RxLinkedinLogo,
-  RxGithubLogo,
-  RxArrowRight,
-} from "react-icons/rx";
+import { RxDiscordLogo, RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
 import { Socials } from "@/constants/socials";
+import EmailForm from "./EmailForm";
 
 const SocialIconsMap: Record<string, React.JSX.Element> = {
   LinkedIn: <RxLinkedinLogo size={28} />,
@@ -20,7 +15,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="relative w-full flex flex-col items-center pt-20 pb-6 px-2 gap-20 z-50"
+      className="relative w-full flex flex-col items-center pt-20 pb-6 px-2 gap-20 z-20"
     >
       <div className="w-full max-w-2xl bg-[#0f1117]/60 rounded-lg shadow-lg font-mono">
         <div className="flex items-center px-6 pt-4 pb-2">
@@ -47,57 +42,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="px-4 pb-4">
-          <form className="flex flex-col gap-4">
-            <div>
-              <label className="block mb-3 font-mono text-pink-400 text-sm">
-                $ <span className="text-green-400">your_name</span>
-              </label>
-              <input
-                name="name"
-                type="text"
-                title=""
-                required
-                placeholder="What's your name?"
-                className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block mb-3 font-mono text-pink-400 text-sm">
-                $ <span className="text-green-400">your_email</span>
-              </label>
-              <input
-                name="email"
-                type="email"
-                title=""
-                required
-                placeholder="What's your email?"
-                className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block mb-3 font-mono text-pink-400 text-sm">
-                $ <span className="text-green-400">your_message</span>
-              </label>
-              <textarea
-                name="message"
-                title=""
-                required
-                rows={4}
-                placeholder="What do you want to say?"
-                className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
-              />
-            </div>
-            <div className="flex justify-center">
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_10px_#60a5fa] hover:shadow-[0_0_15px_#60a5fa] transition duration-300 gap-2"
-              >
-                Send Message <RxArrowRight className="ml-1" size={20} />
-              </button>
-            </div>
-          </form>
-        </div>
+        <EmailForm />
       </div>
 
       <div>
