@@ -1,3 +1,7 @@
+import { motion as motionReact } from "motion/react";
+
+export const motion = motionReact;
+
 export const slideInFromLeft = {
   hidden: { x: -50, opacity: 0 },
   visible: {

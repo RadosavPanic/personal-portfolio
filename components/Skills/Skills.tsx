@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "motion/react";
-import { slideInFromBottom, slideInFromLeft } from "@/utils/motion";
+import { motion, slideInFromLeft } from "@/utils/motion";
 
 import SkillsCard from "./SkillsCard";
 import { Tech_skills } from "@/constants/skills";
-import { IoCodeWorking } from "react-icons/io5";
 import { FaLaptopCode } from "react-icons/fa";
 
 const Skills = () => {

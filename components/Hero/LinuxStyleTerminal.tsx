@@ -1,5 +1,4 @@
-import { motion } from "motion/react";
-import { slideInFromBottom } from "@/utils/motion";
+import { motion, slideInFromBottom } from "@/utils/motion";
 
 const LinuxStyleTerminal = () => {
   return (

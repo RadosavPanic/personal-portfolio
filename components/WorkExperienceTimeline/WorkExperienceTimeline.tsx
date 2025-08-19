@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { motion } from "motion/react";
+import { useState, useEffect } from "react";
 
 import { WorkExperience } from "@/utils/supabase";
-import { slideInFromBottom } from "@/utils/motion";
+import { motion, slideInFromBottom } from "@/utils/motion";
 
 import { MdWorkHistory, MdPictureAsPdf } from "react-icons/md";
 import CvModal from "./CvModal";
@@ -23,6 +22,14 @@ const WorkExperienceTimeline = ({
 
   const handleOpen = () => setModalOpen(true);
   const handleClose = () => setModalOpen(false);
+
+  useEffect(() => {
+    document.body.style.overflow = modalOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modalOpen]);
 
   return (
     <motion.section

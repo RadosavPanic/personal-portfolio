@@ -3,9 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { motion } from "motion/react";
-
-import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import { motion, slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 import {
   MdOutgoingMail,
@@ -19,10 +17,10 @@ const Hero = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="w-full flex flex-col-reverse xl:flex-row items-center justify-center px-6 md:px-20 mt-10 md:mt-40 z-30"
+      className="w-full flex flex-col-reverse xl:flex-row items-center justify-center px-3 md:px-20 mt-10 md:mt-40 z-30"
       id="about-me"
     >
-      <div className="flex flex-col items-center justify-center  md:mt-0">
+      <div className="flex flex-col items-center justify-center md:mt-0">
         <LinuxStyleTerminal />
 
         <motion.div

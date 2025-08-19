@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "motion/react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+
+import { motion } from "@/utils/motion";
 import { SkillProps } from "@/constants/skills";
 
 type SkillPropsExtended = SkillProps & {

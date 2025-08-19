@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
 import Image from "next/image";
-import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import { motion, slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 const About = () => {
   return (
