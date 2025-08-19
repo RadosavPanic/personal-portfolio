@@ -9,6 +9,11 @@ import { ImSpinner4 } from "react-icons/im";
 
 const EmailForm = () => {
   const [isPending, setIsPending] = useState(false);
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,6 +38,7 @@ const EmailForm = () => {
 
       if (data.success) {
         setTimeout(() => {
+          setFormValues({ name: "", email: "", message: "" });
           setIsPending(false);
           toast("Message sent ✅", {
             description:
@@ -63,6 +69,10 @@ const EmailForm = () => {
             title=""
             required
             placeholder="What's your name?"
+            value={formValues.name}
+            onChange={(e) =>
+              setFormValues((prev) => ({ ...prev, name: e.target.value }))
+            }
             className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
         </div>
@@ -76,6 +86,10 @@ const EmailForm = () => {
             title=""
             required
             placeholder="What's your email?"
+            value={formValues.email}
+            onChange={(e) =>
+              setFormValues((prev) => ({ ...prev, email: e.target.value }))
+            }
             className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
         </div>
@@ -87,8 +101,12 @@ const EmailForm = () => {
             name="message"
             title=""
             required
-            rows={4}
             placeholder="What do you want to say?"
+            rows={4}
+            value={formValues.message}
+            onChange={(e) =>
+              setFormValues((prev) => ({ ...prev, message: e.target.value }))
+            }
             className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
           />
         </div>
