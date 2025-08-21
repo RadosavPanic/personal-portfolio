@@ -1,12 +1,13 @@
 "use client";
 
 import { motion, slideInFromLeft } from "@/utils/motion";
+import { SkillsProps } from "@/utils/skills";
 
 import SkillsCard from "./SkillsCard";
-import { Tech_skills } from "@/constants/skills";
+
 import { FaLaptopCode } from "react-icons/fa";
 
-const Skills = () => {
+const Skills = ({ techImages }: SkillsProps) => {
   return (
     <section
       id="skills"
@@ -20,7 +21,7 @@ const Skills = () => {
         Making apps with modern technologies
       </motion.div>
 
-      <SkillsCard skills={Tech_skills} />
+      <SkillsCard techImages={techImages} />
     </section>
   );
 };

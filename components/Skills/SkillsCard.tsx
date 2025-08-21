@@ -1,19 +1,15 @@
 import SkillsDataProvider from "./SkillsDataProvider";
-import { SkillProps } from "@/constants/skills";
+import { SkillsProps, TechImage } from "@/utils/skills";
 
-type SkillsCardProps = {
-  skills: SkillProps[];
-};
-
-const SkillsCard = ({ skills }: SkillsCardProps) => {
+const SkillsCard = ({ techImages }: SkillsProps) => {
   return (
     <>
-      {skills
-        .reduce((acc: SkillProps[][], skill, index) => {
+      {techImages
+        .reduce((acc: TechImage[][], skill, index) => {
           if (
             index %
               Math.ceil(
-                skills.length / Math.round(Math.sqrt(skills.length))
+                techImages.length / Math.round(Math.sqrt(techImages.length))
               ) ===
             0
           )
@@ -30,11 +26,9 @@ const SkillsCard = ({ skills }: SkillsCardProps) => {
           >
             {skillGroup.map((skill, index) => (
               <SkillsDataProvider
-                src={skill.src}
+                url={skill.url}
                 name={skill.name}
-                key={index}
-                width={skill.width}
-                height={skill.height}
+                key={skill.name}
                 index={index}
               />
             ))}

@@ -19,7 +19,7 @@ const ProjectsCard = ({
   github_link,
 }: ProjectProps) => {
   return (
-    <div className="relative overflow-hidden lg:max-w-[30%] md:max-w-[43%] sm:max-w-[100%] z-30 my-5">
+    <div className="relative overflow-hidden lg:max-w-[30%] md:max-w-[43%] sm:max-w-[100%] my-5 z-30">
       <div>
         <h1 className="text-2xl font-semibold text-center">{title}</h1>
       </div>

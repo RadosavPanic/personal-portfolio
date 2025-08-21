@@ -53,3 +53,25 @@ export const fetchCVFile = () => {
 
   return data?.publicUrl || "";
 };
+
+export const fetchTechImages = async () => {
+  try {
+    const { data } = await supabase.storage.from("tech-stack").list();
+
+    if (!data) return [];
+
+    return data?.map((file) => {
+      const { data: publicUrlData } = supabase.storage
+        .from("tech-stack")
+        .getPublicUrl(file.name);
+
+      return {
+        name: file.name,
+        url: publicUrlData.publicUrl,
+      };
+    });
+  } catch (error) {
+    console.error("Error fetching tech stack images:", error);
+    return [];
+  }
+};

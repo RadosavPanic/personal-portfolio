@@ -68,6 +68,7 @@ const EmailForm = () => {
             type="text"
             title=""
             required
+            autoComplete="off"
             placeholder="What's your name?"
             value={formValues.name}
             onChange={(e) =>
@@ -85,6 +86,7 @@ const EmailForm = () => {
             type="email"
             title=""
             required
+            autoComplete="off"
             placeholder="What's your email?"
             value={formValues.email}
             onChange={(e) =>
