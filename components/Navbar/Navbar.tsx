@@ -32,7 +32,13 @@ const Navbar = () => {
           href="/"
           className="h-auto w-auto flex flex-row items-center cursor-pointer"
         >
-          <Image src="/rp-logo.png" alt="logo" width={40} height={40} />
+          <Image
+            src="/rp-logo.png"
+            alt="logo"
+            width={40}
+            height={40}
+            priority
+          />
           <span
             className="font-bold ml-3 hidden md:block hover:text-blue-500"
             title="Back to Homepage"

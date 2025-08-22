@@ -1,28 +1,32 @@
 "use client";
 
-import { motion, slideInFromLeft } from "@/utils/motion";
+import { motion, slideInFromBottom, slideInFromLeft } from "@/utils/motion";
 import { SkillsProps } from "@/utils/skills";
 
 import SkillsCard from "./SkillsCard";
 
 import { FaLaptopCode } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 const Skills = ({ techImages }: SkillsProps) => {
+  const [ref, inView] = useInView({ triggerOnce: true });
+
   return (
-    <section
+    <motion.section
+      ref={ref}
+      initial="hidden"
+      variants={slideInFromBottom(1)}
+      animate={inView ? "visible" : "hidden"}
       id="skills"
       className="w-full mt-20 flex flex-col items-center justify-center"
     >
-      <motion.div
-        variants={slideInFromLeft}
-        className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20"
-      >
-        <FaLaptopCode className="mr-2 text-blue-500" />
+      <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
+        <FaLaptopCode className="mr-2 text-red-500" />
         Making apps with modern technologies
-      </motion.div>
+      </div>
 
       <SkillsCard techImages={techImages} />
-    </section>
+    </motion.section>
   );
 };
 

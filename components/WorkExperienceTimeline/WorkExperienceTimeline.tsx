@@ -8,6 +8,7 @@ import { motion, slideInFromBottom } from "@/utils/motion";
 
 import { MdWorkHistory, MdPictureAsPdf } from "react-icons/md";
 import CvModal from "./CvModal";
+import { useInView } from "react-intersection-observer";
 
 type ExperienceProps = {
   workExperiences: WorkExperience[];
@@ -18,6 +19,8 @@ const WorkExperienceTimeline = ({
   workExperiences,
   cvFileUrl,
 }: ExperienceProps) => {
+  const [ref, inView] = useInView({ triggerOnce: true });
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleOpen = () => setModalOpen(true);
@@ -33,14 +36,15 @@ const WorkExperienceTimeline = ({
 
   return (
     <motion.section
+      ref={ref}
       initial="hidden"
-      animate="visible"
-      variants={slideInFromBottom}
+      variants={slideInFromBottom(0.7)}
+      animate={inView ? "visible" : "hidden"}
       className="flex flex-col items-center justify-center px-4 z-20"
       id="work-experience"
     >
       <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
-        <MdWorkHistory className="inline-block mr-2 text-blue-500" />
+        <MdWorkHistory className="inline-block mr-2 text-red-500" />
         Professional Experience
       </div>
 
@@ -70,8 +74,10 @@ const WorkExperienceTimeline = ({
                   <Image
                     src={exp.image_url!}
                     alt={exp.company}
-                    width={48}
-                    height={48}
+                    unoptimized
+                    width={0}
+                    height={0}
+                    className="w-12 h-8"
                   />
 
                   {idx !== workExperiences.length - 1 && (

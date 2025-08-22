@@ -1,9 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { RxDiscordLogo, RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
-import { Socials } from "@/constants/socials";
 import EmailForm from "./EmailForm";
+import { motion, slideInFromBottom } from "@/utils/motion";
+
+import { Socials } from "@/constants/socials";
+import { RxDiscordLogo, RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
+import { RiSpeakAiFill } from "react-icons/ri";
+import { useInView } from "react-intersection-observer";
 
 const SocialIconsMap: Record<string, React.JSX.Element> = {
   LinkedIn: <RxLinkedinLogo size={28} />,
@@ -12,11 +16,22 @@ const SocialIconsMap: Record<string, React.JSX.Element> = {
 };
 
 const Footer = () => {
+  const [ref, inView] = useInView({ triggerOnce: true });
+
   return (
-    <footer
+    <motion.footer
+      ref={ref}
+      initial="hidden"
+      variants={slideInFromBottom(1)}
+      animate={inView ? "visible" : "hidden"}
       id="contact"
       className="relative w-full flex flex-col items-center pt-20 pb-6 px-2 gap-20 z-20"
     >
+      <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-10">
+        <RiSpeakAiFill className="mr-2 text-red-500" />
+        Get in touch
+      </div>
+
       <div className="w-full max-w-2xl bg-[#0f1117]/60 rounded-lg shadow-lg font-mono">
         <div className="flex items-center px-6 pt-4 pb-2">
           <span className="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
@@ -46,7 +61,7 @@ const Footer = () => {
       </div>
 
       <div>
-        <div className="flex flex-row gap-6 mb-4 justify-center">
+        <div className="flex flex-row gap-4 mb-4 justify-center items-center">
           {Socials.map((social) => (
             <Link
               key={social.name}
@@ -61,11 +76,11 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="text-center text-gray-500 text-sm pb-2">
+        <div className="text-center text-gray-400 text-sm py-2">
           Copyright &copy; {new Date().getFullYear()} Radosav Panic.
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

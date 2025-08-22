@@ -3,7 +3,7 @@ import { motion, slideInFromBottom } from "@/utils/motion";
 const LinuxStyleTerminal = () => {
   return (
     <motion.div
-      variants={slideInFromBottom}
+      variants={slideInFromBottom(0.7)}
       className="w-full max-w-3xl mt-10 p-6 bg-[#0f1117] rounded-lg shadow-lg font-mono"
     >
       <div className="flex items-center mb-4">

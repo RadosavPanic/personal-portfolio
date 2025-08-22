@@ -37,6 +37,7 @@ const MobileMenu = ({ isMenuOpen, handleToggleMenu }: MobileMenuProps) => {
               alt={social.name}
               width={social.width}
               height={social.height}
+              priority
             />
           </Link>
         ))}
