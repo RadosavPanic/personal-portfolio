@@ -9,6 +9,8 @@ export type Project = {
   image_url?: string;
   github_link: string;
   demo_link?: string;
+  type?: "web" | "mobile";
+  skills?: string[];
 };
 
 export type WorkExperience = {
