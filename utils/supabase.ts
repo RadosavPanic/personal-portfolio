@@ -1,28 +1,5 @@
 import { supabase } from "@/lib/supabase/supabase-client";
 
-export type Project = {
-  id: string;
-  created_at: string;
-  name: string;
-  title: string;
-  description: string;
-  image_url?: string;
-  github_link: string;
-  demo_link?: string;
-  type?: "web" | "mobile";
-  skills?: string[];
-};
-
-export type WorkExperience = {
-  id: string;
-  created_at: string;
-  title: string;
-  company: string;
-  date_range: string;
-  description: string;
-  image_url?: string;
-};
-
 export const fetchAllProjects = async () => {
   const { data, error } = await supabase
     .from("projects")

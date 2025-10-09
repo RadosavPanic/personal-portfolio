@@ -1,11 +1,3 @@
-type SocialsTypes = {
-  name: string;
-  src: string;
-  width: number;
-  height: number;
-  href: string;
-};
-
 export const Socials: SocialsTypes[] = [
   {
     name: "LinkedIn",

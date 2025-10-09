@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-import { WorkExperience } from "@/utils/supabase";
 import { motion, slideInFromBottom } from "@/utils/motion";
 
 import { MdWorkHistory, MdPictureAsPdf } from "react-icons/md";

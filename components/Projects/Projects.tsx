@@ -1,21 +1,21 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useInView } from "react-intersection-observer";
 import { slideInFromBottom } from "@/utils/motion";
-import { Project } from "@/utils/supabase";
 
 import WebCard from "./WebCard";
 import MobileCard from "./MobileCard";
 import { GoProjectRoadmap } from "react-icons/go";
 import { FaGlobe, FaMobileAlt } from "react-icons/fa";
-import { useInView } from "react-intersection-observer";
+import { FaRegHandPointDown } from "react-icons/fa";
+import ProjectModal from "./ProjectModal";
+import useProjectStore from "@/store/project.store";
 
-type ProjectsProps = {
-  projects: Project[];
-};
-
-const Projects = ({ projects }: ProjectsProps) => {
+const Projects = ({ projects }: { projects: Project[] }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
+
+  const { modalOpen } = useProjectStore();
 
   const webProjects = projects.filter((p) => p.type === "web");
   const mobileProjects = projects.filter((p) => p.type === "mobile");
@@ -40,12 +40,17 @@ const Projects = ({ projects }: ProjectsProps) => {
             <FaGlobe className="mr-2 text-blue-400" />
             Web Projects
           </h2>
+          <p className="inline-flex items-center justify-center text-md font-bold text-white w-full text-center">
+            <FaRegHandPointDown className="size-5 mr-2 text-blue-400" />
+            Click on images to see more
+          </p>
           <div className="h-full w-full flex flex-col md:flex-row flex-wrap justify-around gap-10">
             {webProjects.map((project) => (
               <WebCard
                 key={project.id}
                 src={project.image_url!}
                 title={project.title}
+                name={project.name}
                 description={project.description}
                 demo_link={project.demo_link!}
                 github_link={project.github_link}
@@ -62,6 +67,10 @@ const Projects = ({ projects }: ProjectsProps) => {
             <FaMobileAlt className="mr-2 text-green-400" />
             Mobile Projects
           </h2>
+          <p className="inline-flex items-center justify-center text-md font-bold text-white w-full text-center">
+            <FaRegHandPointDown className="size-5 mr-2 text-green-400" />
+            Click on images to see more
+          </p>
           <div className="h-full w-full flex flex-col md:flex-row flex-wrap justify-center gap-10 md:gap-36">
             {mobileProjects.map((project) => (
               <MobileCard
@@ -76,6 +85,8 @@ const Projects = ({ projects }: ProjectsProps) => {
           </div>
         </div>
       )}
+
+      {modalOpen && <ProjectModal />}
     </motion.section>
   );
 };

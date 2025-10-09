@@ -1,15 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 import { RxGithubLogo } from "react-icons/rx";
-
-interface ProjectProps {
-  src: string;
-  title: string;
-  github_link: string;
-  skills: string[];
-  description: string;
-}
 
 const MobileCard = ({
   src,
@@ -17,7 +8,7 @@ const MobileCard = ({
   github_link,
   skills,
   description,
-}: ProjectProps) => {
+}: MobileProjectProps) => {
   return (
     <div className="relative overflow-hidden lg:max-w-[30%] md:max-w-[43%] sm:max-w-[100%] my-5 p-4 rounded-2xl bg-gradient-to-t from-gray-900 to-black border border-gray-700 shadow-lg hover:shadow-xl transition duration-300 z-20">
       <div>
@@ -27,13 +18,24 @@ const MobileCard = ({
       </div>
 
       <div className="mt-4 flex justify-center">
-        <Image
-          src={src}
-          alt={title}
-          width={600}
-          height={600}
-          className="object-contain rounded-xl max-h-[400px] w-auto"
-        />
+        <div className="relative rounded-xl overflow-hidden max-h-[400px] group">
+          <Image
+            src={src}
+            alt={title}
+            width={600}
+            height={600}
+            className="object-contain rounded-xl max-h-[400px] w-auto transition-transform duration-300"
+          />
+
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-colors duration-300 flex items-center justify-center">
+            <button
+              onClick={() => {}}
+              className="opacity-0 group-hover:opacity-100 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm px-4 py-2 rounded-md border border-white/20 transition-opacity duration-200"
+            >
+              Read more
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-row items-center justify-center mt-8 gap-2">

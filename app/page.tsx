@@ -8,8 +8,6 @@ import Projects from "@/components/Projects/Projects";
 import {
   fetchAllProjects,
   fetchWorkExperiences,
-  Project,
-  WorkExperience,
   fetchCVFile,
   fetchTechImages,
 } from "@/utils/supabase";
