@@ -80,6 +80,7 @@ const Projects = ({ projects }: { projects: Project[] }) => {
                 description={project.description}
                 github_link={project.github_link}
                 skills={project.skills!}
+                name={project.name}
               />
             ))}
           </div>

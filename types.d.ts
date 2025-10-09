@@ -47,6 +47,7 @@ declare type MobileProjectProps = {
   github_link: string;
   skills: string[];
   description: DescriptionJSON;
+  name: string;
 };
 
 declare type WorkExperience = {
