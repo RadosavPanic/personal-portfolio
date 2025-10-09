@@ -9,12 +9,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import cn from "clsx";
 
 const ProjectModal = () => {
-  const { title, name, description, setModalOpen, clearProjectInfo } =
+  const { title, name, description, type, setModalOpen, clearProjectInfo } =
     useProjectStore();
   const texts = description.texts;
   const images = description.images;
+  const isMobileModal = type === "mobile";
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
@@ -26,7 +28,12 @@ const ProjectModal = () => {
         }}
       />
 
-      <div className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto bg-gray-900 border border-gray-700 rounded-xl p-6 z-10">
+      <div
+        className={`relative w-full ${cn(
+          "",
+          isMobileModal ? "max-w-2xl" : "max-w-4xl"
+        )} max-h-[85vh] overflow-y-auto bg-gray-900 border border-gray-700 rounded-xl p-6 z-10`}
+      >
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <h3 className="text-xl sm:text-2xl font-bold text-white">
@@ -73,7 +80,14 @@ const ProjectModal = () => {
                     key={i}
                     className="w-full flex items-center justify-center"
                   >
-                    <div className="relative w-full h-64 md:h-80 lg:h-96 bg-black/20 rounded-md overflow-hidden">
+                    <div
+                      className={`relative w-full ${cn(
+                        "",
+                        isMobileModal
+                          ? "h-80 md:h-96 lg:h-[36rem]"
+                          : "h-64 md:h-80 lg:h-96"
+                      )} bg-black/20 rounded-md overflow-hidden`}
+                    >
                       <Image
                         src={img}
                         alt={`slide-${i}`}

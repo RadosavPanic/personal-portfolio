@@ -55,6 +55,7 @@ const Projects = ({ projects }: { projects: Project[] }) => {
                 demo_link={project.demo_link!}
                 github_link={project.github_link}
                 skills={project.skills!}
+                type={project.type!}
               />
             ))}
           </div>
@@ -81,6 +82,7 @@ const Projects = ({ projects }: { projects: Project[] }) => {
                 github_link={project.github_link}
                 skills={project.skills!}
                 name={project.name}
+                type={project.type!}
               />
             ))}
           </div>

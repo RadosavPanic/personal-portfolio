@@ -39,6 +39,7 @@ declare type WebProjectProps = {
   github_link: string;
   skills: string[];
   name: string;
+  type: string;
 };
 
 declare type MobileProjectProps = {
@@ -48,6 +49,7 @@ declare type MobileProjectProps = {
   skills: string[];
   description: DescriptionJSON;
   name: string;
+  type: string;
 };
 
 declare type WorkExperience = {

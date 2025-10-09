@@ -6,11 +6,13 @@ type ProjectState = {
   name: string;
   description: DescriptionJSON;
   modalOpen: boolean;
+  type: string;
   setModalOpen: (value: boolean) => void;
   setProjectInfo: (
     title: string,
     name: string,
-    description: DescriptionJSON
+    description: DescriptionJSON,
+    type: string
   ) => void;
   clearProjectInfo: () => void;
 };
@@ -22,18 +24,20 @@ const useProjectStore = create<ProjectState>()(
       title: "",
       name: "",
       description: {},
+      type: "",
       setModalOpen: (value: boolean) => {
         set({ modalOpen: value });
       },
       setProjectInfo: (
         title: string,
         name: string,
-        description: DescriptionJSON
+        description: DescriptionJSON,
+        type: string
       ) => {
-        set({ title, name, description });
+        set({ title, name, description, type });
       },
       clearProjectInfo: () => {
-        set({ title: "", name: "", description: {} });
+        set({ title: "", name: "", description: {}, type: "" });
       },
     }),
     {

@@ -11,6 +11,7 @@ const MobileCard = ({
   skills,
   name,
   description,
+  type,
 }: MobileProjectProps) => {
   const { modalOpen, setModalOpen, setProjectInfo } = useProjectStore();
 
@@ -43,7 +44,7 @@ const MobileCard = ({
           <div className="absolute inset-0 bg-transparent hover:bg-black/60 transition-colors duration-500 flex items-center justify-center cursor-pointer">
             <button
               onClick={() => {
-                setProjectInfo(title, name, description);
+                setProjectInfo(title, name, description, type);
                 setModalOpen(true);
               }}
               className="opacity-0 group-hover:opacity-100 backdrop-blur-sm px-4 py-2 rounded-md bg-white/40 hover:bg-white/50 border border-white  shadow-[0_0_10px_#fff] hover:shadow-[0_0_25px_#fff] transition duration-300 text-white cursor-pointer"
