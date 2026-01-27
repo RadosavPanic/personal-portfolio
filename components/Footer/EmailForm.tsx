@@ -60,8 +60,8 @@ const EmailForm = () => {
     <div className="px-4 pb-4">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
-          <label className="block mb-3 font-mono text-pink-400 text-sm">
-            $ <span className="text-green-400">your_name</span>
+          <label className="block mb-3 font-mono text-green-400 text-sm">
+            <span>Name</span>
           </label>
           <input
             name="name"
@@ -78,8 +78,8 @@ const EmailForm = () => {
           />
         </div>
         <div>
-          <label className="block mb-3 font-mono text-pink-400 text-sm">
-            $ <span className="text-green-400">your_email</span>
+          <label className="block mb-3 font-mono text-green-400 text-sm">
+            <span>Your email</span>
           </label>
           <input
             name="email"
@@ -96,8 +96,8 @@ const EmailForm = () => {
           />
         </div>
         <div>
-          <label className="block mb-3 font-mono text-pink-400 text-sm">
-            $ <span className="text-green-400">your_message</span>
+          <label className="block mb-3 font-mono text-green-400 text-sm">
+            <span>Description</span>
           </label>
           <textarea
             name="message"

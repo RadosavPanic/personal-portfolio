@@ -25,20 +25,15 @@ const Footer = () => {
       variants={slideInFromBottom(1)}
       animate={inView ? "visible" : "hidden"}
       id="contact"
-      className="relative w-full flex flex-col items-center pt-20 pb-6 px-2 gap-20 z-20"
+      className="relative w-full flex flex-col items-center pt-20 pb-6 px-2 gap-20 z-20 py-20"
     >
-      <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-10">
-        <RiSpeakAiFill className="mr-2 text-red-500" />
-        Get in touch
-      </div>
-
       <div className="w-full max-w-2xl bg-[#0f1117]/60 rounded-lg shadow-lg font-mono">
         <div className="flex items-center px-6 pt-4 pb-2">
           <span className="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
           <span className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></span>
           <span className="h-3 w-3 rounded-full bg-green-500 mr-4"></span>
           <span className="text-blue-400 font-semibold text-sm">
-            contact_me.sh
+            contact.sh
           </span>
         </div>
 
@@ -52,8 +47,7 @@ const Footer = () => {
             Let's Talk
           </h2>
           <p className="text-center text-gray-400 mb-6 text-base">
-            Got something on your mind? I'm always happy to chat and hear your
-            thoughts!
+            I'm always happy to chat and hear your thoughts!
           </p>
         </div>
 
@@ -77,7 +71,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center text-gray-400 text-sm py-2">
-          Copyright &copy; {new Date().getFullYear()} Radosav Panic.
+          &copy; {new Date().getFullYear()} Radosav Panic.
         </div>
       </div>
     </motion.footer>

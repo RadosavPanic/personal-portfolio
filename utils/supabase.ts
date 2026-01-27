@@ -13,7 +13,7 @@ export const fetchAllProjects = async () => {
   return data || [];
 };
 
-export const fetchWorkExperiences = async () => {
+export const fetchJourneyExp = async () => {
   const { data, error } = await supabase.from("work_experiences").select("*");
   if (error) {
     console.error("Error fetching work experiences:", error.message);

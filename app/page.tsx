@@ -2,19 +2,19 @@ import { use } from "react";
 
 import Hero from "@/components/Hero/Hero";
 import Skills from "@/components/Skills/Skills";
-import WorkExperienceTimeline from "@/components/WorkExperienceTimeline/WorkExperienceTimeline";
+import WorkExperienceTimeline from "@/components/Journey/JourneyTimeline";
 import Projects from "@/components/Projects/Projects";
 
 import {
   fetchAllProjects,
-  fetchWorkExperiences,
+  fetchJourneyExp,
   fetchCVFile,
   fetchTechImages,
 } from "@/utils/supabase";
 
 const Home = () => {
   const projects: Project[] = use(fetchAllProjects());
-  const workExperiences: WorkExperience[] = use(fetchWorkExperiences());
+  const journeyExp: JourneyExp[] = use(fetchJourneyExp());
   const cvFileUrl: string = fetchCVFile();
   const techImages = use(fetchTechImages());
 
@@ -23,10 +23,7 @@ const Home = () => {
       <div className="flex flex-col gap-20">
         <Hero />
         <Skills techImages={techImages} />
-        <WorkExperienceTimeline
-          workExperiences={workExperiences}
-          cvFileUrl={cvFileUrl}
-        />
+        <WorkExperienceTimeline journey={journeyExp} cvFileUrl={cvFileUrl} />
         <Projects projects={projects} />
       </div>
     </main>

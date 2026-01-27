@@ -20,12 +20,20 @@ const LinuxStyleTerminal = () => {
         $ <span className="text-green-500">radosav@portfolio</span>:~$ about_me
       </p>
       <ul className="ml-6 text-blue-200 list-disc mt-1">
-        <li>My name is Radosav Panic.</li>
         <li>
-          I am Software Developer passionate about Web Technologies and
-          currently exploring Mobile and Data Science.
+          I am an aspiring{" "}
+          <span className="text-green-400">Junior Software Developer</span> with
+          a strong interest in learning new technologies and applying
+          problem-solving skills.
         </li>
-        <li>I enjoy building things that make a difference.</li>
+        <li>
+          Friendly and team-oriented, I enjoy collaborating with others to
+          tackle problems and achieve shared goals.
+        </li>
+        <li>
+          I am eager to grow in IT, contribute to projects, and learn from
+          experienced teams.
+        </li>
       </ul>
 
       <p className="text-pink-500 mt-5">
@@ -33,16 +41,12 @@ const LinuxStyleTerminal = () => {
         current_strengths
       </p>
       <ul className="ml-6 text-blue-200 list-disc mt-1">
-        <li>
-          Knowledge across frontend, backend, and DevOps with modern web tools
-        </li>
-        <li>
-          From scripting to strongly typed — adaptable across many languages
-        </li>
+        <li>Knowledge across frontend, backend, and DevOps</li>
+        <li>From scripting to strongly typed languages</li>
         <li>
           Strong fundamentals in programming, debugging, and problem-solving
         </li>
-        <li>A growth mindset and willingness to tackle any tech challenge</li>
+        <li>A growth mindset and willingness to tackle any challenge</li>
       </ul>
 
       <p className="mt-6">

@@ -26,14 +26,9 @@ const Projects = ({ projects }: { projects: Project[] }) => {
       initial="hidden"
       variants={slideInFromBottom(1)}
       animate={inView ? "visible" : "hidden"}
-      className="flex flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center py-20"
       id="projects"
     >
-      <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
-        <GoProjectRoadmap className="mr-2 text-red-500" />
-        Selection of Projects
-      </div>
-
       {webProjects.length > 0 && (
         <div className="w-full px-10">
           <h2 className="inline-flex items-center justify-center text-xl md:text-2xl font-bold text-white mb-6 w-full text-center">

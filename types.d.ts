@@ -52,12 +52,12 @@ declare type MobileProjectProps = {
   type: string;
 };
 
-declare type WorkExperience = {
+declare type JourneyExp = {
   id: string;
   created_at: string;
   title: string;
   company: string;
   date_range: string;
-  description: string;
+  description: { texts: string[] };
   image_url?: string;
 };

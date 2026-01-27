@@ -1,8 +1,9 @@
 export const navigationHrefs: string[] = [
   "/",
-  "#about-me",
   "#skills",
+  "#journey",
   "#projects",
+  "#contact",
 ];
 
 export const transformLinkName = (navHref: string) => {
