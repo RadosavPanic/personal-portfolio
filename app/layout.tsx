@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-gradient-to-l from-blue-900 to-black text-gray-200 overflow-y-scroll overflow-x-hidden`}
+        className={`${inter.className} bg-gradient-to-l from-gray-700 to-black text-gray-200 overflow-y-scroll overflow-x-hidden`}
       >
         <StarsCanvas />
         <Navbar />

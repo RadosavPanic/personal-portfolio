@@ -14,7 +14,7 @@ type ExperienceProps = {
   cvFileUrl: string;
 };
 
-const WorkExperienceTimeline = ({ journey, cvFileUrl }: ExperienceProps) => {
+const JourneyTimeline = ({ journey, cvFileUrl }: ExperienceProps) => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -59,7 +59,7 @@ const WorkExperienceTimeline = ({ journey, cvFileUrl }: ExperienceProps) => {
             {journey.map((exp, idx) => (
               <div
                 key={exp.id}
-                className="flex items-stretch gap-6 mb-2 last:mb-0 p-2 rounded-lg hover:bg-blue-500/20"
+                className="flex items-stretch gap-6 mb-2 last:mb-0 p-2 rounded-lg hover:bg-green-500/10 cursor-crosshair"
               >
                 <div className="flex-shrink-0 flex flex-col items-center gap-2 min-h-[inherit]">
                   <Image
@@ -102,7 +102,7 @@ const WorkExperienceTimeline = ({ journey, cvFileUrl }: ExperienceProps) => {
         <div className="w-full mt-7 py-2 flex flex-col md:flex-row items-center justify-center md:justify-start gap-7 md:gap-10">
           <button
             onClick={handleOpen}
-            className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_10px_#60a5fa] hover:shadow-[0_0_15px_#60a5fa] transition duration-300 gap-2"
+            className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-green-900 to-black border border-green-500 cursor-pointer shadow-[0_0_5px_#22c55e] hover:shadow-[0_0_10px_#22c55e] transition duration-300 gap-2"
           >
             <MdPictureAsPdf className="w-4 h-4" />
             <span>Download CV</span>
@@ -115,4 +115,4 @@ const WorkExperienceTimeline = ({ journey, cvFileUrl }: ExperienceProps) => {
   );
 };
 
-export default WorkExperienceTimeline;
+export default JourneyTimeline;

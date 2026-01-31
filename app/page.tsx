@@ -2,7 +2,7 @@ import { use } from "react";
 
 import Hero from "@/components/Hero/Hero";
 import Skills from "@/components/Skills/Skills";
-import WorkExperienceTimeline from "@/components/Journey/JourneyTimeline";
+import JourneyTimeline from "@/components/Journey/JourneyTimeline";
 import Projects from "@/components/Projects/Projects";
 
 import {
@@ -23,7 +23,7 @@ const Home = () => {
       <div className="flex flex-col gap-20">
         <Hero />
         <Skills techImages={techImages} />
-        <WorkExperienceTimeline journey={journeyExp} cvFileUrl={cvFileUrl} />
+        <JourneyTimeline journey={journeyExp} cvFileUrl={cvFileUrl} />
         <Projects projects={projects} />
       </div>
     </main>

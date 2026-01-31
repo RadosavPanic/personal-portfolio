@@ -62,7 +62,7 @@ const Footer = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-transform hover:scale-110 hover:text-blue-400"
+              className="transition-transform hover:scale-110 hover:text-green-400"
               aria-label={social.name}
             >
               {SocialIconsMap[social.name] ?? null}

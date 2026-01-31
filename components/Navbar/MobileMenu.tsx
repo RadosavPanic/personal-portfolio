@@ -14,7 +14,7 @@ const MobileMenu = ({ isMenuOpen, handleToggleMenu }: MobileMenuProps) => {
     <div
       className={`md:hidden ${
         isMenuOpen ? "flex" : "hidden"
-      } w-full h-screen absolute flex-col items-center justify-start right-0 py-4 gap-y-20 bg-gradient-to-bl from-blue-900 to-black text-gray-200`}
+      } w-full h-screen absolute flex-col items-center justify-start right-0 py-4 gap-y-20 bg-gradient-to-bl from-gray-700 to-black text-gray-200`}
     >
       <div className="flex flex-col items-center justify-center gap-20 mt-10">
         {navigationHrefs.map((navHref) => (

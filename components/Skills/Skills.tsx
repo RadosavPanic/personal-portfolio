@@ -21,7 +21,7 @@ const Skills = ({ techImages }: SkillsProps) => {
       className="w-full mt-20 flex flex-col items-center justify-center"
     >
       <div className="inline-flex items-center justify-center flex-wrap text-center text-2xl md:text-4xl font-extrabold py-20">
-        <FaLaptopCode className="mr-2 text-red-500" />
+        <FaLaptopCode className="mr-2" />
         Making apps with modern technologies
       </div>
 

@@ -14,7 +14,7 @@ const DesktopMenu = () => {
 
             <Link
               href={navHref}
-              className="cursor-pointer z-10 group-hover:text-blue-500"
+              className="cursor-pointer z-10 group-hover:text-green-500"
             >
               <span>{transformLinkName(navHref)}</span>
             </Link>

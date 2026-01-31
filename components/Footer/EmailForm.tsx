@@ -74,7 +74,7 @@ const EmailForm = () => {
             onChange={(e) =>
               setFormValues((prev) => ({ ...prev, name: e.target.value }))
             }
-            className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-green-500"
           />
         </div>
         <div>
@@ -92,7 +92,7 @@ const EmailForm = () => {
             onChange={(e) =>
               setFormValues((prev) => ({ ...prev, email: e.target.value }))
             }
-            className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-green-500"
           />
         </div>
         <div>
@@ -109,12 +109,12 @@ const EmailForm = () => {
             onChange={(e) =>
               setFormValues((prev) => ({ ...prev, message: e.target.value }))
             }
-            className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
+            className="w-full rounded-md bg-[#18181b] border border-[#23232a] px-4 py-2 text-gray-200 focus:outline-none focus:ring-1 focus:ring-green-500 resize-none"
           />
         </div>
         <div className="flex justify-center">
           <button type="submit" disabled={isPending}>
-            <div className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-blue-900 to-black border border-blue-500 cursor-pointer shadow-[0_0_10px_#60a5fa] hover:shadow-[0_0_15px_#60a5fa] transition duration-300 gap-2">
+            <div className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gradient-to-t from-green-900 to-black border border-green-500 cursor-pointer shadow-[0_0_5px_#22c55e] hover:shadow-[0_0_10px_#22c55e] transition duration-300 gap-2">
               {!isPending ? (
                 <>
                   <span>Send Message</span>
