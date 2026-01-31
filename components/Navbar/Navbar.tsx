@@ -40,7 +40,7 @@ const Navbar = () => {
             priority
           />
           <span
-            className="font-bold ml-3 hidden md:block hover:text-green-500"
+            className="font-bold ml-3 hidden md:block"
             title="Back to Homepage"
           >
             Radosav Panic

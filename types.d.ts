@@ -11,6 +11,8 @@ declare type DescriptionJSON = {
   images?: string[];
 };
 
+type ProjectType = "web" | "mobile" | "other";
+
 declare type Project = {
   id: string;
   created_at: string;
@@ -20,8 +22,14 @@ declare type Project = {
   image_url?: string;
   github_link: string;
   demo_link?: string;
-  type?: "web" | "mobile";
+  type: ProjectType;
   skills?: string[];
+};
+
+type ProjectBadgeProps = {
+  title: ProjectType;
+  label?: string;
+  active: boolean;
 };
 
 declare type ProjectModalProps = {

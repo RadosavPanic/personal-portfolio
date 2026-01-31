@@ -6,19 +6,17 @@ import { slideInFromBottom } from "@/utils/motion";
 
 import WebCard from "./WebCard";
 import MobileCard from "./MobileCard";
-import { GoProjectRoadmap } from "react-icons/go";
 import { FaGlobe, FaMobileAlt } from "react-icons/fa";
 import { FaRegHandPointDown } from "react-icons/fa";
 import ProjectModal from "./ProjectModal";
 import useProjectStore from "@/store/project.store";
+import ProjectsSelector from "./ProjectsSelector";
+import clsx from "clsx";
 
 const Projects = ({ projects }: { projects: Project[] }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
-
-  const { modalOpen } = useProjectStore();
-
-  const webProjects = projects.filter((p) => p.type === "web");
-  const mobileProjects = projects.filter((p) => p.type === "mobile");
+  const { modalOpen, type } = useProjectStore();
+  const filteredProjects = projects.filter((p) => p.type === type);
 
   return (
     <motion.section
@@ -29,57 +27,54 @@ const Projects = ({ projects }: { projects: Project[] }) => {
       className="flex flex-col items-center justify-center py-20"
       id="projects"
     >
-      {webProjects.length > 0 && (
+      {filteredProjects.length > 0 && (
         <div className="w-full px-10">
           <h2 className="inline-flex items-center justify-center text-xl md:text-2xl font-bold text-white mb-6 w-full text-center">
-            <FaGlobe className="mr-2 text-blue-400" />
-            Web Projects
+            <FaGlobe className="mr-2 text-green-400" />
+            Projects
           </h2>
-          <p className="inline-flex items-center justify-center text-md font-bold text-white w-full text-center">
-            <FaRegHandPointDown className="size-5 mr-2 text-blue-400" />
-            Click on images to see more
-          </p>
-          <div className="h-full w-full flex flex-col md:flex-row flex-wrap justify-around gap-10">
-            {webProjects.map((project) => (
-              <WebCard
-                key={project.id}
-                src={project.image_url!}
-                title={project.title}
-                name={project.name}
-                description={project.description}
-                demo_link={project.demo_link!}
-                github_link={project.github_link}
-                skills={project.skills!}
-                type={project.type!}
-              />
-            ))}
-          </div>
-        </div>
-      )}
 
-      {mobileProjects.length > 0 && (
-        <div className="w-full px-10 mt-16">
-          <h2 className="inline-flex items-center justify-center text-xl md:text-2xl font-bold text-white mb-6 w-full text-center">
-            <FaMobileAlt className="mr-2 text-green-400" />
-            Mobile Projects
-          </h2>
-          <p className="inline-flex items-center justify-center text-md font-bold text-white w-full text-center">
-            <FaRegHandPointDown className="size-5 mr-2 text-green-400" />
-            Click on images to see more
-          </p>
-          <div className="h-full w-full flex flex-col md:flex-row flex-wrap justify-center gap-10 md:gap-36">
-            {mobileProjects.map((project) => (
-              <MobileCard
-                key={project.id}
-                src={project.image_url!}
-                title={project.title}
-                description={project.description}
-                github_link={project.github_link}
-                skills={project.skills!}
-                name={project.name}
-                type={project.type!}
-              />
-            ))}
+          <ProjectsSelector />
+
+          {type === "mobile" && (
+            <p className="inline-flex items-center justify-center text-md font-bold text-white w-full text-center">
+              <FaRegHandPointDown className="size-5 mr-2 text-green-400" />
+              Click on images to see more
+            </p>
+          )}
+
+          <div
+            className={clsx(
+              "h-full w-full flex flex-col md:flex-row flex-wrap justify-center gap-10",
+              type === "mobile" ? "md:gap-36" : "",
+            )}
+          >
+            {filteredProjects.map((project) =>
+              type === "mobile" ? (
+                <MobileCard
+                  key={project.id}
+                  src={project.image_url!}
+                  title={project.title}
+                  description={project.description}
+                  github_link={project.github_link}
+                  skills={project.skills!}
+                  name={project.name}
+                  type={project.type!}
+                />
+              ) : (
+                <WebCard
+                  key={project.id}
+                  src={project.image_url!}
+                  title={project.title}
+                  name={project.name}
+                  description={project.description}
+                  demo_link={project.demo_link!}
+                  github_link={project.github_link}
+                  skills={project.skills!}
+                  type={project.type!}
+                />
+              ),
+            )}
           </div>
         </div>
       )}
