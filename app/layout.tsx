@@ -32,8 +32,9 @@ export default function RootLayout({
           toastOptions={{
             classNames: {
               toast:
-                "bg-[#0f1117]/90 text-gray-200 rounded-lg p-4 font-mono shadow-lg border-y border-x border-x-blue-500 border-y-gray-500",
+                "bg-[#0f1117]/90 text-gray-300 rounded-lg p-4 font-mono shadow-lg border border-green-900",
               description: "text-sm",
+              title: "font-bold text-lg mb-1",
             },
           }}
         />

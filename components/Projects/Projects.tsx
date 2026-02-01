@@ -1,22 +1,37 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { slideInFromBottom } from "@/utils/motion";
+import { toast } from "sonner";
 
 import WebCard from "./WebCard";
 import MobileCard from "./MobileCard";
 import { FaGlobe } from "react-icons/fa";
-import { FaRegHandPointDown } from "react-icons/fa";
 import ProjectModal from "./ProjectModal";
 import useProjectStore from "@/store/project.store";
 import ProjectsSelector from "./ProjectsSelector";
 import clsx from "clsx";
 
 const Projects = ({ projects }: { projects: Project[] }) => {
-  const [ref, inView] = useInView({ triggerOnce: true });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.4 });
   const { modalOpen, type } = useProjectStore();
   const filteredProjects = projects.filter((p) => p.type === type);
+
+  useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        toast("🤖 Explore projects", {
+          description:
+            "Tap any image to dive into details and more about my work! 👇",
+          position: "top-center",
+          duration: 4500,
+          unstyled: true,
+        });
+      }, 2000);
+    }
+  }, [inView]);
 
   return (
     <motion.section
@@ -35,14 +50,6 @@ const Projects = ({ projects }: { projects: Project[] }) => {
           </h2>
 
           <ProjectsSelector />
-
-          {type === "mobile" && (
-            <p className="inline-flex items-center justify-center text-md font-bold text-white w-full text-center">
-              <FaRegHandPointDown className="size-5 mr-2 text-green-400" />
-              Click on images to see more
-            </p>
-          )}
-
           <div
             className={clsx(
               "h-full w-full flex flex-col md:flex-row flex-wrap justify-center gap-10",
