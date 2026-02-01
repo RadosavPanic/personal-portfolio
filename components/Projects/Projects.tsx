@@ -6,7 +6,7 @@ import { slideInFromBottom } from "@/utils/motion";
 
 import WebCard from "./WebCard";
 import MobileCard from "./MobileCard";
-import { FaGlobe, FaMobileAlt } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
 import { FaRegHandPointDown } from "react-icons/fa";
 import ProjectModal from "./ProjectModal";
 import useProjectStore from "@/store/project.store";

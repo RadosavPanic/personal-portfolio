@@ -80,7 +80,7 @@ const WebCard = ({
       </div>
 
       <div className="flex flex-row flex-wrap items-center justify-center gap-3 mt-6">
-        {skills.map((skill, idx) => (
+        {skills?.map((skill, idx) => (
           <Image
             key={idx}
             src={skill}

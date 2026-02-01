@@ -24,14 +24,13 @@ const ProjectModal = () => {
         className="absolute inset-0 bg-black/60"
         onClick={() => {
           setModalOpen(false);
-          clearProjectInfo();
         }}
       />
 
       <div
         className={`relative w-full ${cn(
           "",
-          isMobileModal ? "max-w-2xl" : "max-w-4xl"
+          isMobileModal ? "max-w-2xl" : "max-w-4xl",
         )} max-h-[85vh] overflow-y-auto bg-gray-900 border border-gray-700 rounded-xl p-6 z-10`}
       >
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
@@ -51,7 +50,6 @@ const ProjectModal = () => {
               <button
                 onClick={() => {
                   setModalOpen(false);
-                  clearProjectInfo();
                 }}
                 className="text-white/80 hover:text-white bg-transparent px-3 py-1 rounded-md border border-white/10"
               >
@@ -85,7 +83,7 @@ const ProjectModal = () => {
                         "",
                         isMobileModal
                           ? "h-80 md:h-96 lg:h-[36rem]"
-                          : "h-64 md:h-80 lg:h-96"
+                          : "h-64 md:h-80 lg:h-96",
                       )} bg-black/20 rounded-md overflow-hidden`}
                     >
                       <Image
