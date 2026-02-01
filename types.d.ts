@@ -47,7 +47,7 @@ declare type WebProjectProps = {
   github_link: string;
   skills: string[];
   name: string;
-  type: string;
+  type: ProjectType;
 };
 
 declare type MobileProjectProps = {
