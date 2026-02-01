@@ -57,7 +57,7 @@ declare type MobileProjectProps = {
   skills: string[];
   description: DescriptionJSON;
   name: string;
-  type: string;
+  type: ProjectType;
 };
 
 declare type JourneyExp = {
